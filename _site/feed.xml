@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lorem Ipsum - Web Developer</title>
+    <description>A blog about lorem ipsum ...</description>
+    <link>/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 09 Dec 2016 15:07:59 -0600</pubDate>
+    <lastBuildDate>Fri, 09 Dec 2016 15:07:59 -0600</lastBuildDate>
+    <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>Sharding in MongoDB</title>
+        <description>&lt;p class=&quot;music-read&quot;&gt;&lt;a href=&quot;spotify:track:4DAZ8UYNpWVIV46aLkN2Qp&quot;&gt;Music for reading(spotify)&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;http://cdn1.tnwcdn.com/wp-content/blogs.dir/1/files/2016/02/raw.gif&quot; /&gt;&lt;/p&gt; &lt;h2 id=&quot;sharding--why-&quot;&gt;Sharding ? why ?&lt;/h2&gt; &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quas, esse laudantium quis ipsa consequuntur iure atque! Necessitatibus quam quidem illum, corrupti molestiae, maxime neque, consequuntur quia alias, modi commodi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate rem ducimus dolores repellat itaque perferendis corporis ex dicta doloremque optio harum excepturi, ut, praesentium asperiores! Voluptatum amet perspiciatis iusto, fugiat!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, libero quia placeat necessitatibus culpa mollitia, illum, quam sed ratione ad eaque suscipit consectetur itaque quasi aperiam. Quaerat, nihil voluptas...</description>
+        <pubDate>Sun, 11 Sep 2016 19:06:31 -0500</pubDate>
+        <link>/sharding/</link>
+        <guid isPermaLink="true">/sharding/</guid>
+        
+        <category>mongodb</category>
+        
+        
+        <category>jekyll is awesome</category>
+        
+      </item>
+    
+      <item>
+        <title>Github is awesome</title>
+        <description>&lt;p class=&quot;music-read&quot;&gt;&lt;a href=&quot;spotify:track:4DAZ8UYNpWVIV46aLkN2Qp&quot;&gt;Music for reading(spotify)&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;http://cdn1.tnwcdn.com/wp-content/blogs.dir/1/files/2016/02/raw.gif&quot; /&gt;&lt;/p&gt; &lt;h2 id=&quot;github--why-&quot;&gt;Github ? why ?&lt;/h2&gt; &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quas, esse laudantium quis ipsa consequuntur iure atque! Necessitatibus quam quidem illum, corrupti molestiae, maxime neque, consequuntur quia alias, modi commodi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate rem ducimus dolores repellat itaque perferendis corporis ex dicta doloremque optio harum excepturi, ut, praesentium asperiores! Voluptatum amet perspiciatis iusto, fugiat!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, libero quia placeat necessitatibus culpa mollitia, illum, quam sed ratione ad eaque suscipit consectetur itaque quasi aperiam. Quaerat, nihil voluptas...</description>
+        <pubDate>Fri, 11 Mar 2016 18:06:31 -0600</pubDate>
+        <link>/space/</link>
+        <guid isPermaLink="true">/space/</guid>
+        
+        <category>mongodb</category>
+        
+        
+        <category>github is awesome</category>
+        
+      </item>
+    
+  </channel>
+</rss>
