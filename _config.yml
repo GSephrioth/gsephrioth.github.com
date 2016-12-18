@@ -2,7 +2,7 @@
 title: Gsephrioth - Software Engineer
 description: "A blog about Gsephrioth ..."
 baseurl: "" # for test: remove string '/space-jekyll-templa' to ''
-url: "" # for test: remove string 'http://victorvoid.github.io' to '' but in production: 'https:yourusername.githu.io'
+url: "https:gsephtioth.github.io" # for test: remove string 'http://victorvoid.github.io' to '' but in production: 'https:yourusername.githu.io'
 # User settings
 username: Mr. Gsephrioth
 user_title: Gsephrioth - Web Site
