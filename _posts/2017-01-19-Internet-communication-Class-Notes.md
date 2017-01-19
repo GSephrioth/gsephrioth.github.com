@@ -1,3 +1,12 @@
+---
+layout: post
+title:  "Notes for Internet communication"
+image: ''
+date:   2017-01-19 13:50:00
+description: ''
+serie: learn
+---
+
 Lecture 2 & 3
 
 # overview of OSI MODEL and TCP/IP protocol suite
