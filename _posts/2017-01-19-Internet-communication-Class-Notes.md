@@ -14,15 +14,15 @@ Lecture 2 & 3
 ## network model
 
 ## layered network arctitecture
-	highter layer use service provided by lower layer
+>highter layer use service provided by lower layer
 
 ## Basic divies of the layers
 	
-	1. [application]
-	2. [transport] <- TCP/UDP
-	3. [network] <- IP (packet)
-	4. [dataline] <- physical address (frame)
-	5. [physical]
+	[application]
+	[transport] <- TCP/UDP
+	[network] <- IP (packet)
+	[dataline] <- physical address (frame)
+	[physical]
 
 ## IP address (classful addressing)
 * netid & hostid
