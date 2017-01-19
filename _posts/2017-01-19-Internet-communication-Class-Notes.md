@@ -41,7 +41,8 @@ Lecture 2 & 3
 * static/ dynamic routing
 
 ## Address Resolution Protocol (ARP)
-	maping Logical address & physical address
+>maping Logical address & physical address
+
 * packet format
 * encapsulation
 * cache table
@@ -51,7 +52,8 @@ Lecture 2 & 3
 * cache control model
 
 ## Internet Protocol (IP)
-	aim at end to end packet deliverly
+>aim at end to end packet deliverly
+
 * datagram
 * fragmentation (adjust size of packet to suit different frames)
 * options
@@ -64,7 +66,8 @@ Lecture 2 & 3
 * reassembly table
 
 ## User Datagram Protocol (UDP)
-	aim at program to program deliverly
+>aim at program to program deliverly
+
 * port number
 * socket address (IP + port)
 * connectionless serves (faster but not reliable)
