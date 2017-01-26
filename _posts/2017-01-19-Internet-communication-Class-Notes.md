@@ -7,7 +7,7 @@ description: ''
 serie: learn
 ---
 
-Lecture 2 & 3
+<p style="color:red">Lecture 2 & 3</p>
 
 <h1 style="color:grey">Overview</h1>
 
@@ -96,9 +96,9 @@ Lecture 2 & 3
 * sliding window protocol
 * TCP timers
 
-Lecture 4
+<p style="color:red">Lecture 4</p>
 
-<h1 color="grey">Layer articture</h1>
+<h1 style="color:grey">Layer articture</h1>
 
 The Internet model sometimes caused the TCP/IP protocol suit is composed of five levels:
 	5. [application]
@@ -117,11 +117,11 @@ As long as a layer....
 
 At each layer a Header can be added to the data unit. at layer 2 a T.. is added as ...
 
-## Physical Layer
+<h1 style="color:grey">Physical Layer</h1>
 
 the physical layer is responsible for transmitting individal bits from one node to the next.
 
-the major dvties of the physical layer: Physical characterisitics of .... and .... The physical layer defines charcateristics of the interface ...............
+the major dvties of the physical layer: Physical characterisitics of interfaces and media. The physical layer defines charcateristics of the interface between the divices and the transmission meaning. It also defines the type of transmission media.
 
 representation of logical bits: voltage, light, etc. Most times we use +5V trans to -5V to represent logical 1; -5V trans to +5V to represent logical 0. Because that way we will not get a constant signal +5V, which is hard to decide the beginning and the end of each bit.
 
@@ -131,6 +131,46 @@ The transmission layer ...... of a bit.
 Synchronization of bits (difference of CPU clock might cause a problem)
 
 
+<p style="color:red">Lecture 5</p>
+
+<h1 style="color:grey">Data Link Layer</h1>
+
+The major of the data link layer:
+
+1. Framing: 
+The data link layer divides the stream of bits into manageable data units called "Frames". It contains Trailer, data from network layer, Source address, Destination address.
+
+2. Physical Addressing: 
+The data link layer adds a header of the frame to define the sender and receiver of the frame. Most of the time, it also called as Media Access Control(MAC) address.
+
+3. Flow Control:
+If the data absorb by the receiver is less than the rate produced by the sender, the data link layer introduce a flow control mechamsm to prevent overloading the ...
+
+4. Error Control:
+The data link layer adds mechanisms to defect and retransmit damaged or lost frames. Error control is achieved through a traiver added to the end of the frame.
+
+5. Access Control:
+When two  or more devices are connected to the same link data link layer pritdcts are necessary to determine which device has control over the link at any given time.
+
+<h1 style="color:grey">Network Layer</h1>
+
+The network layer is responible for the delivery of packets from the original source to the final destination, possibly accross multiple networks.
+
+The major of the network layer:
+
+1. Logical Addressing:
+The network layer adds a header to the data unit coming from the upper layer that includes the logical address of the sender and receiver.
+
+2. Routing:
+When indepent networks or links are connected to create an internetwork. The connected deivces route the packets to their final destination. The network layer provides this mechinsm.
+
+3. Intermediating:
+
+4. Packeting:
+
+5. Fragmentation:
+
+6. Address Resolution:
 
 
 
