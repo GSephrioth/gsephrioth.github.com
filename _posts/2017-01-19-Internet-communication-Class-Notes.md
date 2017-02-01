@@ -135,10 +135,10 @@ Synchronization of bits (difference of CPU clock might cause a problem)
 
 <h1 style="color:grey">Data Link Layer</h1>
 
-The major of the data link layer:
+The major duty of the data link layer:
 
 1. Framing: 
-The data link layer divides the stream of bits into manageable data units called "Frames". It contains Trailer, data from network layer, Source address, Destination address.
+The data link layer divides the stream of bits into manageable data units called "Frames". It contains Trailer, Data from network layer, Source address, Destination address.
 
 2. Physical Addressing: 
 The data link layer adds a header of the frame to define the sender and receiver of the frame. Most of the time, it also called as Media Access Control(MAC) address.
@@ -156,13 +156,16 @@ When two  or more devices are connected to the same link data link layer pritdct
 
 The network layer is responible for the delivery of packets from the original source to the final destination, possibly accross multiple networks.
 
-The major of the network layer:
+Packet do not change during the end to end transfer, which means the packet may pass through several router and change the frame covering it for serveral times.
+
+The major duty of the network layer:
 
 1. Logical Addressing:
 The network layer adds a header to the data unit coming from the upper layer that includes the logical address of the sender and receiver.
 
 2. Routing:
 When indepent networks or links are connected to create an internetwork. The connected deivces route the packets to their final destination. The network layer provides this mechinsm.
+
 
 3. Intermediating:
 
@@ -171,6 +174,37 @@ When indepent networks or links are connected to create an internetwork. The con
 5. Fragmentation:
 
 6. Address Resolution:
+
+<p style="color:red">Lecture 6</p>
+
+<h1 style="color:grey">Transport Layer</h1>
+
+The transport layer is responsible for delivery the message from process to process.
+
+The major duty of the transport layer:
+
+1. Port addressing:
+The transport layer header must includes a port address. The network layer get each packet to the traffic computer. The transport layer get the entre message to the certain process on that computer.
+
+2. Segmentation and the addembly:
+A message is divided into transmittable segments, each segment connecting A se...... These ... emable the transport layer to ... the messages c... upon arrival to the destination.
+
+3. Connection Control:
+The transport layer can be either connectionless or connection oranted. A connectionless transport layer trates each segments as a independ unit and deliever it to transport layer at the destination machine. A connected oranted transport layer crates a connection with the transport layer at the destination machine before transfering the segments. After all the data are transfered the connection is terminated.
+
+4. Flow Control:
+Flow control at this layer is performed end-to-end rather than across a single link.
+
+5. Error control:
+Error control at this layer is performed end-to-end rather than across a single link. To sending transport layer to make sure that the entire message arrives at the recevive transport layer without errors. 
+
+<h1 style="color:grey">Application Layer</h1>
+
+The application layer is responsible for providing services to the user.
+
+Main services: FIle Transfer/ WWW
+
+
 
 
 
