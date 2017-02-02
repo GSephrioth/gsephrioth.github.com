@@ -18,11 +18,12 @@ serie: learn
 
 ## Basic divies of the layers
 >mostly focus on transport/network/dataline layers
-	5. [application]
-	4. [transport] <- TCP/UDP
-	3. [network] <- IP (packet)
-	2. [dataline] <- physical address (frame)
-	1. [physical]
+
+5. [Application]
+4. [Transport] <- TCP/UDP
+3. [Network] <- IP (packet)
+2. [Dataline] <- physical address (frame)
+1. [Physical]
 
 ## IP address (classful addressing)
 * netid & hostid
@@ -100,12 +101,13 @@ serie: learn
 
 <h1 style="color:grey">Layer articture</h1>
 
-The Internet model sometimes caused the TCP/IP protocol suit is composed of five levels:
-	5. [application]
-	4. [transport]
-	3. [network]
-	2. [dataline]
-	1. [physical]
+>The Internet model sometimes caused the TCP/IP protocol suit is composed of five levels:
+
+5. [Application]
+4. [Transport]
+3. [Network]
+2. [Dataline]
+1. [Physical]
 
 In developing these model the desingers distilled the process of transmitted data to its host fundemental elements. Identify the networking fection and collect these fections into dis.. form Layers. Each layer defines a family of fections distinctive from these of each layer.
 
@@ -119,7 +121,7 @@ At each layer a Header can be added to the data unit. at layer 2 a T.. is added 
 
 <h1 style="color:grey">Physical Layer</h1>
 
-the physical layer is responsible for transmitting individal bits from one node to the next.
+>the physical layer is responsible for transmitting individal bits from one node to the next.
 
 the major dvties of the physical layer: Physical characterisitics of interfaces and media. The physical layer defines charcateristics of the interface between the divices and the transmission meaning. It also defines the type of transmission media.
 
@@ -134,6 +136,8 @@ Synchronization of bits (difference of CPU clock might cause a problem)
 <p style="color:red">Lecture 5</p>
 
 <h1 style="color:grey">Data Link Layer</h1>
+
+>Data Link Layer is to organize bits into frames, to provide hop-to-gop delivery.
 
 The major duty of the data link layer:
 
@@ -154,7 +158,7 @@ When two  or more devices are connected to the same link data link layer pritdct
 
 <h1 style="color:grey">Network Layer</h1>
 
-The network layer is responible for the delivery of packets from the original source to the final destination, possibly accross multiple networks.
+>The network layer is responible for the delivery of packets from the original source to the final destination, possibly accross multiple networks.
 
 Packet do not change during the end to end transfer, which means the packet may pass through several router and change the frame covering it for serveral times.
 
@@ -167,7 +171,7 @@ The network layer adds a header to the data unit coming from the upper layer tha
 When indepent networks or links are connected to create an internetwork. The connected deivces route the packets to their final destination. The network layer provides this mechinsm.
 
 
-3. Intermediating:
+3. Internetworking:
 
 4. Packeting:
 
@@ -179,7 +183,7 @@ When indepent networks or links are connected to create an internetwork. The con
 
 <h1 style="color:grey">Transport Layer</h1>
 
-The transport layer is responsible for delivery the message from process to process.
+>The transport layer is responsible for delivery the message from process to process.
 
 The major duty of the transport layer:
 
@@ -200,12 +204,66 @@ Error control at this layer is performed end-to-end rather than across a single 
 
 <h1 style="color:grey">Application Layer</h1>
 
-The application layer is responsible for providing services to the user.
+>The application layer is responsible for providing services to the user.
 
 Main services: FIle Transfer/ WWW
 
+<p style="color:red">Lecture 7</p>
 
+<h1 style="color:grey">Open System Interconnection(OSI) Model</h1>
 
+>It is developed by International organization for standerization(ISO). The OSI model is a theoretical model desicribe to show how a protocol stack should be implemened.
+	
+7. [Application]
+6. [Presentation]
+5. [Session]
+4. [Transport]
+3. [Network]
+2. [Dataline]
+1. [Physical]
 
+The Session Layer is the ......
 
+The Presentation Layer were designed to handle syntax and sementanics of the information changes between the systems. It was designed for data translation, encrib..., deceibation and compression.
 
+<h1 style="color:grey">Detials in Network Layer</h1>
+
+>Duties of Network Layer:
+
+1. Internetworking: The logical giving of heterogemeous physical networks together to look like a single network.
+
+2. Packetizing: The network layer encatsulatrs data units received from upper layer protocols and makes packets out of them.
+
+3. Addressing: The address used in the network layer must be <label style="color:red">uniquely and universaly</label> defined the connection of a host or a router to the Internet.
+
+4. Routing: Each IP packet can reach its destination via several routes. The
+
+5. Routing Protocol: A routing protocol is a ... of routers and procedures that .. routers in the internet ... other of changes.
+
+6. Fragmenting: Each router decapsulates the IP dataframs from the received forms processes it and then encapuates it in another frame. If the packet is too large it is fragmented.
+
+7. Address Resolution: The Network Layer provides host-to-host addressing. The Dtat Link Layer needs physical addressing for node-to-node delivery. These two addressing are mapped to each other
+<h4 style="text-align:center">(IP address -> ARP -> physical address)</h4>
+
+>Process of Network Layer:
+
+<h3>At a Source:</h3>
+
+Data from Transport Layer => Packetizer => Processing module => Routing module(Routing Table) => Fragmentation nodule => to Data Link Layer
+
+Network Layer at the source: Network Layer at the source is responable for creating a packet that carries two universal addresses: a source address and a dertination address. If the packet is too large it is fragmented.
+
+<h3>At a Router:</h3>
+
+Data from Data Link Layer 1 => Processing module => Routing module(Routing Table) => Fragmentation nodule => to Data Link Layer 2
+
+Network Layer at the router: Network Layer at the router is responsible for routing the packet. The router finds the interface from which the packet must be sent. 
+<h4 style="text-align:center">(Like deciding which door to enter)</h4>
+
+<h3>At a Destination:</h3>
+
+Data from Data Link Layer => Processing module => Error checker => Reassemly nodule (Reassembly Table) => to Transport Layer
+
+Network Layer at the Destination: Network Layer at the Destination make sure that the destination address of the packet is the same as the address of the host.
+<h4 style="text-align:center">((To make sure the packet have reached the right place)</h4>
+It also checks if the packet has crupted during transmission and reassemable the original packet.
