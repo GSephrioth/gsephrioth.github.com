@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Mac下搭建Jekyll和 github Page"
+title:  "MAC搭建github Page"
 image: ''
 date:   2017-01-11 00:06:31
 description: ''
