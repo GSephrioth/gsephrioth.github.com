@@ -267,3 +267,66 @@ Data from Data Link Layer => Processing module => Error checker => Reassemly nod
 Network Layer at the Destination: Network Layer at the Destination make sure that the destination address of the packet is the same as the address of the host.
 <h4 style="text-align:center">((To make sure the packet have reached the right place)</h4>
 It also checks if the packet has crupted during transmission and reassemable the original packet.
+
+<p style="color:red">Lecture 8</p>
+
+<h1 style="color:grey">Switching</h1>
+
+Switching: Circuit Switching + Packet Switching (Vertual circuit approach + Datagram approach)
+
+Circuit Switching creates a point-to-point link sending messages directed and continues. But it is not so efficient, beacuse the size of message is unknown. So it is used for old voice based system, like telephone.
+
+Packed Switch divides the message into packets, which have the same size. It is fraquently used in Nowadays network. 
+
+<h4 style="text-align:center;color:pink">Study Vertual circuit approach on our own. </h4>
+
+Switching at the network layer in the Internet is done using the datagram approach to packet switching.
+
+In the datagram approach to traget switching each packet is treated independent of all ... A traget is ... a piece of a ... transmission packets on the approach are re... to as datagrams.
+
+Communication at the network layer in the Internet is connectionless.
+
+<h1 style="color:grey">IP Address</h1>
+
+<h4 style="text-align:center">An IP address is a 32-bit address.</h4>
+
+The identifier used in the network layer of the implenment model to identify each divice connected to the Internet is called <label style="color:red">Internet address</label> or <label style="color:red">IP address </label>
+
+In <label style="color:red">Binary notation</label> the IP address is displayed as 32-bits. 
+
+In <label style="color:red">Dotted-decimal notation</label> Internet addresses are writen in decimal form with a dot separating the Bytes.
+
+In classful addressing the address space is divided into five classes: A, B, C, D, and E.
+
+<img src="/assets/img/having-fun/FullSizeRender.jpg">
+
+<img src="/assets/img/having-fun/IMG_8600.jpg">
+
+When the address is given in dotted decimal notation, then we need to look at the first byte to determin the class of the address.
+
+Addresses in A, B, and C are for <label style="color:red">universal communication</label> from one source to one destination. Addresses on class D are for <label style="color:red"> multicast communication </label>, from one source to a group of destination. Addresses in class E are <label style="color:red">reserved </label> for future use.
+
+An IP addresses in classes A, B and C is divided into <label style="color:red">Netid </label>and <label style="color:red"> Host ID </label>
+
+* Class A: 1 Byte defines Netid and 3 Bytes defines Host ID.
+* Class B: 2 Byte defines Netid and 2 Bytes defines Host ID.
+* Class C: 3 Byte defines Netid and 1 Bytes defines Host ID.
+
+<p style="color:red">Lecture 9</p>
+
+* <b>Class A</b> is divided into 128 blocks with each block having a dfferent Netid, and 2^24 unique IP addresses. The first covers address from <label style="color:red">0.0.0.0 to 0.255.255.255</label>, the 2nd block from <label style="color:red">1.0.0.0 to 1.255.255.255</label>, etc. Class A addresses were designed for large organization with a large number of hosts or routers attached to their network, Or it will be wasted.
+* <b>Class B</b> is divided into (191-127)*256=16384 blocks with each block having a dfferent Netid, and 2^16 unique IP addresses. The first covers address from <label style="color:red">128.0.0.0 to 128.0.255.255</label> with Netid <label style="color:red">128.0</label>, the Last block from <label style="color:red">191.255.0.0 to 191.255.255.255</label>, with Netid <label style="color:red">191.255</label>, etc. Class A addresses were designed for midsize organization with Tens of thousands of hosts or routers.
+* <b>Class C</b> is divided into 2097152 blocks with each block having a dfferent Netid, and 2^8 unique IP addresses. The first covers address from <label style="color:red">192.0.0.0 to 192.0.0.255</label>, the last block from <label style="color:red">223.255.255.0 to 223.255.255.255</label>, etc. Class A addresses were designed for large organization with a large number of hosts or routers attached to their network, Or it will be wasted.
+
+<h4 style="text-align:center">Netid is part of Network Address</h4>
+
+'Netid + All 0s' is the Network address.
+
+The network address is an address that defines the network itself. It can not be assigned to a host or router.
+
+A network address has several proderties :
+
+* A Hostid byte are 0s.
+* A network address defines the network to the rest of the Internet.
+* The network address is the first address in the block.
+
