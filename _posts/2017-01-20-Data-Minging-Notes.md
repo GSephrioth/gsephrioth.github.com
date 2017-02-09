@@ -49,31 +49,33 @@ scikit-learn
 	Objects
 	Attributes
 
--Attribbute Types
+-Attribbute Types (Chapter 2 page 24-26)
 	Norminal Values
 	Ordinal Values
 	Internal Valuse Eg: times, dates, temperature
 	Ratio Valuse Eg: age, gender, height
 
--Data Transformation
+
+-Data Transformation (Chapter 2 page 27)
 	Swaps 
-	Monentie Function (?)
+	Monontonic Function
 	Linear shift y=ax+6
 	Scab shift y=ax
 
--Data Catagories
+-Data Catagories (Chapter 2 page 28)
 	Continuous Data: Floats, etc.
 
-	Decraste Data: String, Map, etc.
+	Discrete Data: String, Map, etc.
 
--Representation
+-Representation (Chapter 2 page 29-36)
 	Data Matrix: database, tables, etc. (Most times need to transform into this type)
-	Document Data transform into -> Term Table, Term Vectors, etc.
+	Document Data, always transform into -> Term Table, Term Vectors, etc.
 	Transcation Data: Marckt Basket, etc
 	Graph Data: Linked Docs, Pages, etc
 	Sequence/ Steam Data
 
--Data Quality (important and costs lots time)
+-Data Quality (Chapter 2 page 36)
+important and costs lots time to improve it
 	Noise: Interference/ Mersurement Error/ Natural Valuation
 	Outlier: S..../ DGP Difference
 	Duplicate Values: Full/ Partial Duplicates/ Merging Duplicates
