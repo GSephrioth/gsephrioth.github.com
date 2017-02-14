@@ -327,6 +327,10 @@ The network address is an address that defines the network itself. It can not be
 A network address has several proderties :
 
 * A Hostid byte are 0s.
-* A network address defines the network to the rest of the Internet.
+* A network address defines the network to the rest of the internet.
 * The network address is the first address in the block.
+
+The first address in the block defines the <label style="color:red">Network Address</label> these address is used by routers the outside the organization to route the packets destined to this network.
+
+
 
