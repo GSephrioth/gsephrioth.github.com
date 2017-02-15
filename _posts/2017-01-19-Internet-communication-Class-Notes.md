@@ -2,7 +2,7 @@
 layout: post
 title:  "TCP/IP protocol suite"
 image: ''
-date:   2017-01-19 13:50:00
+date:   2017-02-14 10:00:00
 description: ''
 serie: learn
 ---
@@ -298,9 +298,9 @@ In <label style="color:red">Dotted-decimal notation</label> Internet addresses a
 
 In classful addressing the address space is divided into five classes: A, B, C, D, and E.
 
-<img src="/assets/img/having-fun/FullSizeRender.jpg">
+<img src="/assets/img/having-fun/IPaddress.jpg">
 
-<img src="/assets/img/having-fun/IMG_8600.jpg">
+<img src="/assets/img/having-fun/IPaddress2.jpg">
 
 When the address is given in dotted decimal notation, then we need to look at the first byte to determin the class of the address.
 
@@ -315,7 +315,9 @@ An IP addresses in classes A, B and C is divided into <label style="color:red">N
 <p style="color:red">Lecture 9</p>
 
 * <b>Class A</b> is divided into 128 blocks with each block having a dfferent Netid, and 2^24 unique IP addresses. The first covers address from <label style="color:red">0.0.0.0 to 0.255.255.255</label>, the 2nd block from <label style="color:red">1.0.0.0 to 1.255.255.255</label>, etc. Class A addresses were designed for large organization with a large number of hosts or routers attached to their network, Or it will be wasted.
-* <b>Class B</b> is divided into (191-127)*256=16384 blocks with each block having a dfferent Netid, and 2^16 unique IP addresses. The first covers address from <label style="color:red">128.0.0.0 to 128.0.255.255</label> with Netid <label style="color:red">128.0</label>, the Last block from <label style="color:red">191.255.0.0 to 191.255.255.255</label>, with Netid <label style="color:red">191.255</label>, etc. Class A addresses were designed for midsize organization with Tens of thousands of hosts or routers.
+
+* <b>Class B</b> is divided into (191-127)*256=16384 blocks with each block having a dfferent Netid, and 2^16 unique IP addresses. The first covers address from <label style="color:red">128.0.0.0 to 128.0.255.255</label> with Netid <label style="color:red">128.0</label>, the Last block from <label style="color:red">191.255.0.0 to 191.255.255.255</label>, with Netid <label style="color:red">191.255</label> , etc. Class A addresses were designed for midsize organization with Tens of thousands of hosts or routers.
+
 * <b>Class C</b> is divided into 2097152 blocks with each block having a dfferent Netid, and 2^8 unique IP addresses. The first covers address from <label style="color:red">192.0.0.0 to 192.0.0.255</label>, the last block from <label style="color:red">223.255.255.0 to 223.255.255.255</label>, etc. Class A addresses were designed for large organization with a large number of hosts or routers attached to their network, Or it will be wasted.
 
 <h4 style="text-align:center">Netid is part of Network Address</h4>
@@ -331,6 +333,40 @@ A network address has several proderties :
 * The network address is the first address in the block.
 
 The first address in the block defines the <label style="color:red">Network Address</label> these address is used by routers the outside the organization to route the packets destined to this network.
+
+<p style="color:red">Lecture 10</p>
+
+Often the network needs to be devided into several <label style="color:red">subnetwork(subnet)</label>, with each subnetwork having its own <label style="color:red">subnetwork address</label>. When we divide a network into several subnets, we have 3 levels of hierarchy??
+
+a position of a 32-bit address indicates the network(NetID)...............
+
+
+The resultsdvsite the 
+
+<h1 style="color:grey"> The mask </h1>
+
+The 32-bit number called the mask is the routing key
+
+A default mask is a 32-bit binary number that gives the network address when "anded" with an address in the block
+
+<h4 style="text-align:center"> "anded" means logical "AND" </h4>
+
+<img src="/assets/img/having-fun/IPmask.jpg">
+
+## how does default mask works
+1. The router looks at the first byte of the address to find the class. It is class B
+2. The default mask for class B is 255.255.0.0. The router ANDs this mask with the address to get 190.240.0.0.
+3. The router looks in its routing table to find out how to route the packet to this destination. Later, we will see what happens if this destination does not exist.
+
+## how does subnet mask works
+The number of is in a subnet mask '1's more than the numberof '1's in the conrresponding default mask.
+
+1. The subnet mask is 255.255.240.0. The router ANDs the subnet mask with the address to get 190.240.32.0.
+2. The router looks in its routing table to find out how to route the packet to this destination.
+
+
+
+
 
 
 
