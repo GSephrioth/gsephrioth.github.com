@@ -336,16 +336,17 @@ The first address in the block defines the <label style="color:red">Network Addr
 
 <p style="color:red">Lecture 10</p>
 
-Often the network needs to be devided into several <label style="color:red">subnetwork(subnet)</label>, with each subnetwork having its own <label style="color:red">subnetwork address</label>. When we divide a network into several subnets, we have 3 levels of hierarchy??
+IP addresses are designed with <label style="color:red">two levels of hierarchy(层次结构)</label>. A position of a 32-bit address indicates the network(Net id) and a portion indicates the host(Host id) in the network.
 
-a position of a 32-bit address indicates the network(NetID)...............
+Often the network needs to be devided into several <label style="color:red">subnetworks(subnets)</label>, with each subnetwork having its own <label style="color:red">subnetwork address</label>. When we devide a network into several subnets we have three levels of hierarchy.
 
+Adding subnetwork creates an intermediate level of hoerarchy in the Ip address. Now we have 3 levels: site, subnet, host.
 
-The resultsdvsite the 
+The router outside the organization route the packet based on the network address. The router inside the organization routes the packet based on the subnet address.
 
 <h1 style="color:grey"> The mask </h1>
 
-The 32-bit number called the mask is the routing key
+The 32-bit number called the mask is the routing key.
 
 A default mask is a 32-bit binary number that gives the network address when "anded" with an address in the block
 
@@ -356,14 +357,14 @@ A default mask is a 32-bit binary number that gives the network address when "an
 ## how does default mask works
 1. The router looks at the first byte of the address to find the class. It is class B
 2. The default mask for class B is 255.255.0.0. The router ANDs this mask with the address to get 190.240.0.0.
-3. The router looks in its routing table to find out how to route the packet to this destination. Later, we will see what happens if this destination does not exist.
+3. The router looks in its routing table to find out how to route the packet to this destination. 
 
 ## how does subnet mask works
 The number of is in a subnet mask '1's more than the numberof '1's in the conrresponding default mask.
 
-1. The subnet mask is 255.255.240.0. The router ANDs the subnet mask with the address to get 190.240.32.0.
-2. The router looks in its routing table to find out how to route the packet to this destination.
-
+1. The router must know the mask. We assume it is /19.
+2. The router applies the mask to the address, 190.240.33.91. The subnet address is 190.240.32.0. 19 = 8+8+3 => Mask is 255.255.224.0.
+3. The router looks in its routing table find out how to route the packet to this destination.
 
 
 
