@@ -2,12 +2,13 @@
 layout: post
 title:  "TCP/IP protocol suite"
 image: ''
-date:   2017-02-14 10:00:00
-description: ''
+date:   2017-02-16 10:00:00
+description: 'Lectures in IIT about TCP/IP protocol suite'
 serie: learn
 ---
 
 <p style="color:red">Lecture 2 & 3</p>
+
 
 <h1 style="color:grey">Overview</h1>
 
@@ -363,9 +364,46 @@ A default mask is a 32-bit binary number that gives the network address when "an
 The number of is in a subnet mask '1's more than the numberof '1's in the conrresponding default mask.
 
 1. The router must know the mask. We assume it is /19.
-2. The router applies the mask to the address, 190.240.33.91. The subnet address is 190.240.32.0. 19 = 8+8+3 => Mask is 255.255.224.0.
+2. The router applies the mask to the address, 190.240.33.91.  The subnet address is 190.240.32.0. 19 = 8+8+3 => Mask is 255.255.224.0.
 3. The router looks in its routing table find out how to route the packet to this destination.
 
+<p style="color:red">Lecture 11</p>
+
+The default mask creates the network address.
+The subnet mask creates the subnet address.
+
+Today we use only contingous masks (a run of 1s followed by a run of 0s)
+
+Given the IP address we can find the subnet address the same way we found the network address. We applying the mask to the address.
+
+The number of subnetworks can be found by counting the extra 1s that are added to the default mask to make the subnet mask. For example, if the number of extra 1s is 3, the number of subnets is 2^3 = 8.
+
+two addresses in each subnet are added to the list of special addresses. The first address in each subnet is the subnet address the last address is reserved for broadcast in side the subnet.
+
+<h1 style="color:grey">Supernetwork</h1>
+
+Using the first byte to decide the class of the network, make the mask shorter to create a supernetwork mask.
+
+The notation 195.14.192.3/24 shows a class C address, with a default mask. But the address 195.14.192.3/21 shows a supernet of class C address, with the mask 255.255.248.0, which conbined by 2^3 = 8 class C networks.
+<img src="">
+
+<h1 style="color:grey">multihomed devices</h1>
+
+<img src="">
+
+A computer that is connected to different networks is called a multihomed computer and will have more than one address.
+
+An Internet address defines the connection of a divice to a specific network. The monement of a computer from one network to another means that its IP address nust be changed.
+
+<h1 style="color:grey">Special Addresses</h1>
+
+* Network Address: The first address in the block defines the network address. (Netid: Specific + Hostid: All 0s)
+
+* Direct Broadcat Address: If the Hostid is all 1s, the address is called a direct broadcast address. It is used by a router to send a packet to all hosts in this specific network. All hosts will accept a packet having this type of destination address. (Netid: Specific + Hostid: All 1s)
+
+* Limited Broadcast Address: An address with all 1s for the Netid and the Host id defines a broadcast address in the current network. A host that wants to send a message to every others. Host can use this address as a destination address in an IP packet. A router will block a packet having this type of address to confirm the broadcasting to the local network. (Netid and Hostid: All 1s)
+
+* Loopback Address: The IP address with the first byte 127 is used for the loopback address, which is an address to test software on a machine. When this address is used, the packet never leaves the machine. It simply returns to the protocol software. (Netid and Hostid: 127.X.Y.Z)
 
 
 
