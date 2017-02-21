@@ -2,7 +2,7 @@
 layout: post
 title:  "TCP/IP protocol suite"
 image: ''
-date:   2017-02-16 10:00:00
+date:   2017-02-21 10:00:00
 description: 'Lectures in IIT about TCP/IP protocol suite'
 serie: learn
 ---
@@ -287,7 +287,7 @@ In the datagram approach to traget switching each packet is treated independent 
 
 Communication at the network layer in the Internet is connectionless.
 
-<h1 style="color:grey">IP Address</h1>
+<h1 style="color:grey">IP Address(CLassful Addressing)</h1>
 
 <h4 style="text-align:center">An IP address is a 32-bit address.</h4>
 
@@ -405,7 +405,30 @@ An Internet address defines the connection of a divice to a specific network. Th
 
 * Loopback Address: The IP address with the first byte 127 is used for the loopback address, which is an address to test software on a machine. When this address is used, the packet never leaves the machine. It simply returns to the protocol software. (Netid and Hostid: 127.X.Y.Z)
 
+<p style="color:red">Lecture 12</p>
 
+Communication in the Internet can be achieved using <label style="color:red">Unicast, Mulitcast or Broadcast</label> addresses. No Broadcasting is allowed at the global Internet.
+* Unicast: one to one
+* Mulitcast: one to many
+* Broadcast: one to all
 
+<h1 style="color:grey"> Classless Addressing</h1>
+In classless addressing <label style="color:red">variable-length blockes</label> are assigned that belong to no class. In this architecture, the entire address space (2^32 addre
+
+## Rules:
+1. The number of addresses in a block must be power of 2.
+2. The first address must be evenly divisible by the number of addresses.
+	eg. if the block contains 4 addresses. The first address must be divisible by 4. If a block contains 16 addresses, the first address must be divisible by 16.
+
+> First address + number of addresses = range of addresses
+
+Problem 1: which of the following can be the beginning address of a block that contains 16 addresses?
+	a. 205.16.37.32  b. 190.16.42.44  c. 17.17.33.80  d. 123.45.24.52
+	计算IP Address的大小时，前3个字节分别要乘上256，256^2，256^3，肯定都能被16整除，第4个字节是32也能被16整除，所以4个字节加起来可以被整除。
+	所以，只要一个block包含少于256个地址，并且符合第一条规则，那么只需要看最后一个字节是否能被整除。
+
+十进制:Decimal System 
+二进制:Binary System
+可以把IP视为256进制，每个Byte是一个数字。
 
 
