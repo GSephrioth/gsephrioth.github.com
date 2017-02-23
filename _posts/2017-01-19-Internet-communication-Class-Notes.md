@@ -3,6 +3,7 @@ layout: post
 title:  "TCP/IP protocol suite"
 image: ''
 date:   2017-02-21 10:00:00
+comments: true
 description: 'Lectures in IIT about TCP/IP protocol suite'
 serie: learn
 ---
@@ -420,7 +421,7 @@ In classless addressing <label style="color:red">variable-length blockes</label>
 2. The first address must be evenly divisible by the number of addresses.
 	eg. if the block contains 4 addresses. The first address must be divisible by 4. If a block contains 16 addresses, the first address must be divisible by 16.
 
-> First address + number of addresses = range of addresses
+<h4 style="text-align:center"> First address + number of addresses = range of addresses</h4>
 
 Problem 1: which of the following can be the beginning address of a block that contains 16 addresses?
 	a. 205.16.37.32  b. 190.16.42.44  c. 17.17.33.80  d. 123.45.24.52
@@ -430,5 +431,26 @@ Problem 1: which of the following can be the beginning address of a block that c
 十进制:Decimal System 
 二进制:Binary System
 可以把IP视为256进制，每个Byte是一个数字。
+
+<p style="color:red">Lecture 13</p>
+
+In <label style="color:red">classful addressing</label> when an address is given we can first find the class of the address. We can then apply the mask to find the begining address and the range of addresses.
+
+In <label style="color:red">classless addressing</label> when an address is given the block the address belongs to can not be found unless we have the mask. The 'N' after the slash defines the number of bits that are the same in every addresses in the block.
+
+> How can we tell if the address is classful or classless??
+
+<h4 style="text-align:center"> Classful addressing is a special case of classless addressing.</h4>
+
+If n=20, it means that 20 lefthost bits are idenfical in each addresses with 12 bits not the same.
+The prefix is another name for the common part of the address range(similar to Net Id)
+The suffix is the varying part.(similar to Host id) The suffix length is 32-n.
+We can "AND" the mask and the address to find the first address.
+
+不是总要把整个IP变成bytes，很多时候只要变一部分就能得出结果。
+
+
+
+
 
 
