@@ -2,6 +2,7 @@
 layout: post
 title:  "Data Mining Notes"
 image: ''
+comments: true
 date:   2017-01-20 18:20:00
 description: ''
 serie: learn

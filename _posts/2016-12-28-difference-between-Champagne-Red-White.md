@@ -2,6 +2,7 @@
 layout: post
 title:  "区分干红、干白、香槟"
 image: ''
+comments: true
 date:   2016-12-28 09:31:00
 tags:	吃喝玩乐
 ---

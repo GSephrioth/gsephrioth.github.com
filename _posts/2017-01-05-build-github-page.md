@@ -2,6 +2,7 @@
 layout: post
 title:  "MAC搭建github Page"
 image: ''
+comments: true
 date:   2017-01-11 00:06:31
 description: ''
 serie: learn

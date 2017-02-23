@@ -449,7 +449,8 @@ We can "AND" the mask and the address to find the first address.
 
 不是总要把整个IP变成bytes，很多时候只要变一部分就能得出结果。
 
-
+There are two methods that find the last address in the block in the first method we add the number of addresses in the block minvs to the first .....
+In the 2nd method we add the first address to the complement of the mask
 
 
 
