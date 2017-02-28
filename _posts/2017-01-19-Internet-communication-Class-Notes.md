@@ -452,6 +452,30 @@ We can "AND" the mask and the address to find the first address.
 There are two methods that find the last address in the block in the first method we add the number of addresses in the block minvs to the first .....
 In the 2nd method we add the first address to the complement of the mask
 
+<p style="color:red">Lecture 14</p>
+
+In CIDR notation, the block grounded is defined by the first and the prefix length. For instance, the block is defined as 190.87.140.200/29.
+
+In fixed-length subnetting, the number of subnets is a power of 2.
+
+We can have subnetting with classless addressing. If the number of subnets is 'x'. The number of extra is in the prefix of 'log2(x)'.
+
+We can dividing the subnet based on the number of subnets, which will influence the prefix, and addresses in each subnets, which will influence the suffix.
+
+<h4 style="text-align:center">Remember First Address & Last Address is special</h4>
+
+Eg: Diving 11 blocks in the given network address 12.24.74.0/24
+00000000/26:0
+01000000/26:64
+10000000/27:128
+10100000/27:160
+11000000/28:192
+11010000/28:208
+11100000/28:224
+11110000/30:240
+11110100/30:244
+11111000/30:248
+11111100/30:252
 
 
 
