@@ -2,7 +2,7 @@
 layout: post
 title:  "TCP/IP protocol suite"
 image: ''
-date:   2017-02-21 10:00:00
+date:   2017-03-8 10:00:00
 comments: true
 description: 'Lectures in IIT about TCP/IP protocol suite'
 serie: learn
@@ -472,10 +472,46 @@ Eg: Diving 11 blocks in the given network address 12.24.74.0/24
 11000000/28:192
 11010000/28:208
 11100000/28:224
-11110000/30:240
+11110000/30:240s
 11110100/30:244
 11111000/30:248
 11111100/30:252
 
+<p style="color:red">Lecture 15</p>
+
+> IP is a connectionless protocol
+In a connectionless service, the network layer protocol treats each packet independently. The packets may or may not travel the same path to their destination. In a connectionless service, the decesion about the route of packet is made indivdually by each router.
+
+<label style="color:red">Direct deliverly</label> occurs when the source and destination of a packet are located in the same physical network or if the delivery is between the last router and the destination host. 
+
+<label style="color:red">Indirect delivery</label> the packet goes from router to router until it reaches the one connected to the same physical network as its final destination. In an indirect delivery, the sender uses the destination IP address and the routing table to find the IP address of the next router to which the packet should be delivered.
+In an indirect delivery the address mapping between the IP address of the next router and the physical address of the next router is done by the <label style="color:red">address resolution protocol</label>.
+
+Host-specific method: The destination host address is given in th routing table. (too large)
+Network-specific method: Instead of having an entry for every destination host connected to the same physical network. We have only one entry that defines the address of the destination network itself. (much smaller)
+Default routing method: There is still too much networks to fit into a routing table. Router R1 route the packet to host connected to network N2. For the rest of the Internet router R2 is used instead of using all networks in the entire Internet, Host A can just have one entry called <label style="color:red">Default</label>
+
+Problem: IP address in the packet is of the destination Host, Routing table only stores some network address.
+<img src="Figure 6.7">
+Next-hop address is IP address
+Most times hop is a router
+
+Forwarding with classful addressing:
+* forwarding without subnetting: each routing table has three columns:
+	1. The network address of the destination network tells us where the destination host is located.
+	2. The next-hop address tells us to which router the packet must be delivered for an indirect delivery. For direct deilvery it is empty.
+	3. The interface number defines the outgoing interface from which the packet is sent out. The router is usually connected to several networks. Each connection has a different interface.
+* The algorithm implemented:
+	1. The destination address of the packet is extracted.
+	2. The destination address is used to find the class of the address. This is done by shifting the address 28 bit to the right. The result is 4 bit number between 0 and 15. 
+		0-7 Class A
+		8-11 Class B
+		12-13 Class C
+		14 Class D
+		15 Class E
+	3. Find the network address.
+	4. The class of the address and the network address are used to find the next-hop address and the interface number.
+
+<p style="color:red">Lecture 16</p>
 
 
