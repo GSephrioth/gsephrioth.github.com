@@ -3,7 +3,7 @@ layout: post
 title:  "Data Mining Notes"
 image: ''
 comments: true
-date:   2017-01-20 18:20:00
+date:   2017-02-28 17:20:00
 description: ''
 serie: learn
 ---
@@ -26,16 +26,30 @@ Web / Internet -> hyper text
 
 ML:
 Situational Pattern Recongation
-Situational .......?
+Situational Probabelisde Modeling
 Artifical Nerual Networks (ANN)
 Support Vector Machine (SVM)
 Deep Learning (DL)
+Optimization Resarch (OR)
 
 DM:
 all modles are wrong but some are useful
 finding a hidden pattern V.S. perdiction
 
-Tools:
+-Technology
+* Data Science
+* Big Data (defines on situation)
+-> Shifts in Tech & Usage of Tech 
+-> All produces Data
+-> Structed & unstructed data
+* Distributed Computing: Map Reduce/ DFS/ Hadoop/ HPC/ Clusters
+* Open MPI/ Open MP/ Open ACC (Old, but still valuable somehow)
+
+Statistes: Descriptive/ Inferential
+ML: Unsupervised/ Supervised
+DM: Data Mining/ Predictive Analytics
+
+-Tools:
 Orange
 Python3
 NumPy

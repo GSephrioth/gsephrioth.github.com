@@ -2,7 +2,7 @@
 layout: post
 title:  "TCP/IP protocol suite"
 image: ''
-date:   2017-03-8 10:00:00
+date:   2017-03-10 10:00:00
 comments: true
 description: 'Lectures in IIT about TCP/IP protocol suite'
 serie: learn
@@ -139,7 +139,7 @@ Synchronization of bits (difference of CPU clock might cause a problem)
 
 <h1 style="color:grey">Data Link Layer</h1>
 
->Data Link Layer is to organize bits into frames, to provide hop-to-gop delivery.
+>Data Link Layer is to organize bits into frames, to provide hop-to-hop delivery.
 
 The major duty of the data link layer:
 
@@ -513,5 +513,50 @@ Forwarding with classful addressing:
 	4. The class of the address and the network address are used to find the next-hop address and the interface number.
 
 <p style="color:red">Lecture 16</p>
+
+Examples for Routing in Classful address
+Figure 6.8-10
+<img src="">
+<img src="">
+<img src="">
+
+Forwarding with subnetting:
+Subnetting happens inside the organization. The model for fixed length subnetting:
+1. The model extract the destination address of the packet from the Header.(without the mask!)
+2. The destination address and the mask are used to extract the subnet adddress.
+3. The table is searched using your subnet address to find the next hop address and the interface number. If no match is found the default is used. If the column is empty, it means the next hop is the destination Host.
+4. The next hop address and the interface number are given to ARP. 
+
+In Classless Addressing
+We need at least four columns. Mask, Network address, Next-hop address, Interface:
+Sort the mask from the longer to shoter. The last one will be default.
+For each row, mask is applied to the destination address, get the result, compare the result with the network address in the row. If it matches, we can get the next-hop address and interface and do ARP. If not matches, we need to go to the next row.
+
+<p style="color:red">Lecture 17</p>
+
+Address aggregation
+
+To reduce the size of routing table, the idea of address aggregation was introduced.
+The blocks of addresses for many organization are aggregated into one larger block.
+
+Routing in classless addressing uses <label style="color:red">Longest mask Matching</label>. The routing table is sorted from the longest mask to the shortest mask.
+
+Hierarchical routing with ISPs
+ISP: Internet service provider.
+Regional ISP -> Local ISP -> Small ISP
+Large block => Small blocks
+
+To Solve the problem of Gieantic routing tables we can create a sense of Hierarchical in the routing tables.
+
+Searching in classful address
+The routing table is divided into three tables (Called "Buckets") one for each class. When a packet arrives, the router applies the default mask to find the cooresponding bucket(A,B,C) the router then searches the cooresponding bucket.
+
+Searching in classless address
+The routing table is devided into "Buckets", one for each prefix, the router first tries the longest prefix. If the destination address is found in this bucket, the search is complete. If the address is not found, the next prefix is searched.
+
+A <label style="color:red">static routing table</label> contains information entered manually. The administrator enters the route for each destination into the table. When the table is created, it can not update automatically, when there is a change in the internet.
+
+<h1 style="color:grey"> Dynamic Routing Table</h1>
+It is updated periodcally using one of the dynamic routing protocols whenever there is a change in the internet, such as shut down of a router or breaking of a link. The dynamic routing protocols update the tables in the router.
 
 
