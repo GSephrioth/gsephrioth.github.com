@@ -24,7 +24,7 @@ serie: learn
 5. [Application]
 4. [Transport] <- TCP/UDP
 3. [Network] <- IP (packet)
-2. [Dataline] <- physical address (frame)
+2. [Datalink] <- physical address (frame)
 1. [Physical]
 
 ## IP address (classful addressing)
@@ -172,14 +172,17 @@ The network layer adds a header to the data unit coming from the upper layer tha
 2. Routing:
 When indepent networks or links are connected to create an internetwork. The connected deivces route the packets to their final destination. The network layer provides this mechinsm.
 
-
 3. Internetworking:
+The network layer at the source computer needs to consult a routing table to find the logical address of the next hop.
 
-4. Packeting:
+4. Packetizing
+Encapsulating the data coming from the upper layer in a datagram. This is done by adding a header to the data that contains the logical source and destination address of the packet, information about fragmentation, the protocol ID of the protocol that has requested the service, the data length, and possibly some options. 
 
 5. Fragmentation:
+The datagram needs to be fragmented to smaller units before being passed to the data link layer. Fragmentation needs to preserve the information at the header of the datagram.
 
 6. Address Resolution:
+Use a table to map the logical address of the next-hop into MAC address of the next-hop.
 
 <p style="color:red">Lecture 6</p>
 
