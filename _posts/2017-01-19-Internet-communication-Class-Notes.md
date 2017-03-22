@@ -5,7 +5,7 @@ image: ''
 date:   2017-03-10 10:00:00
 comments: true
 description: 'Lectures in IIT about TCP/IP protocol suite'
-serie: learn
+series: learn
 ---
 
 <p style="color:red">Lecture 2 & 3</p>
@@ -15,11 +15,11 @@ serie: learn
 
 ## network model
 
-## layered network arctitecture
->highter layer use service provided by lower layer
+## layered network architecture
+>higher layer use service provided by lower layer
 
-## Basic divies of the layers
->mostly focus on transport/network/dataline layers
+## Basic divide of the layers
+>mostly focus on transport/network/data-link layers
 
 5. [Application]
 4. [Transport] <- TCP/UDP
@@ -28,19 +28,19 @@ serie: learn
 1. [Physical]
 
 ## IP address (classful addressing)
-* netid & hostid
-* classes and blooks
+* net-id & host-id
+* classes and blocks
 * packet (payload + header)
 * network address
 * special addresses
 * private addresses
-* unique/ mulitycast/ boardcast
+* unique/ multicast/ broadcast
 * mask and routing
 * subnetting (divide large blocks)
 * supernetting (combine small blocks)
 
 ## IP address (classless addressing)
-* varable length blocks
+* variable length blocks
 * subnetting
 * address location with Egs.
 
@@ -53,7 +53,7 @@ serie: learn
 * static/ dynamic routing
 
 ## Address Resolution Protocol (ARP)
->maping Logical address & physical address
+>mapping Logical address & physical address
 
 * packet format
 * encapsulation
@@ -64,7 +64,7 @@ serie: learn
 * cache control model
 
 ## Internet Protocol (IP)
->aim at end to end packet deliverly
+>aim at end to end packet delivery
 
 * datagram
 * fragmentation (adjust size of packet to suit different frames)
@@ -78,7 +78,7 @@ serie: learn
 * reassembly table
 
 ## User Datagram Protocol (UDP)
->aim at program to program deliverly
+>aim at program to program delivery
 
 * port number
 * socket address (IP + port)
@@ -89,7 +89,7 @@ serie: learn
 ## Transmission Control Protocol  (TCP)
 * process-to-process communication (P2P communication)
 * connection-oriented service (reliable but slower)
-* numbering system (incase of loseing package)
+* numbering system (in case of losing package)
 * flow control (speed difference between processes)(slid window flow control)
 * congestion control
 * segment format
@@ -101,19 +101,19 @@ serie: learn
 
 <p style="color:red">Lecture 4</p>
 
-<h1 style="color:grey">Layer articture</h1>
+<h1 style="color:grey">Layer architecture</h1>
 
 >The Internet model sometimes caused the TCP/IP protocol suit is composed of five levels:
 
 5. [Application]
 4. [Transport]
 3. [Network]
-2. [Dataline]
+2. [Datalink]
 1. [Physical]
 
-In developing these model the desingers distilled the process of transmitted data to its host fundemental elements. Identify the networking fection and collect these fections into dis.. form Layers. Each layer defines a family of fections distinctive from these of each layer.
+In developing these model the designers distilled the process of transmitted data to its host fundamental elements. Identify the networking faction and collect these factions into dis.. form Layers. Each layer defines a family of factions distinctive from these of each layer.
 
-Each layer build upon the service of the layer below it. eg. layer 3 is based on the service of layer 2, and provides service to layer 4. Layer X on one machine communicates with Layer X on other machine.
+Each layer build upon the service of the layer below it. e.g. layer 3 is based on the service of layer 2, and provides service to layer 4. Layer X on one machine communicates with Layer X on other machine.
 
 It costs quite a lot to change a protocol, especially when it does not suits the interface of upper layer and below layer. Because change of interface means change the protocol, which result into a change of the whole networking system. That is a revolution.
 
@@ -123,9 +123,9 @@ At each layer a Header can be added to the data unit. at layer 2 a T.. is added 
 
 <h1 style="color:grey">Physical Layer</h1>
 
->the physical layer is responsible for transmitting individal bits from one node to the next.
+>the physical layer is responsible for transmitting individual bits from one node to the next.
 
-the major dvties of the physical layer: Physical characterisitics of interfaces and media. The physical layer defines charcateristics of the interface between the divices and the transmission meaning. It also defines the type of transmission media.
+the major duties of the physical layer: Physical characteristics of interfaces and media. The physical layer defines characteristics of the interface between the divides and the transmission meaning. It also defines the type of transmission media.
 
 representation of logical bits: voltage, light, etc. Most times we use +5V trans to -5V to represent logical 1; -5V trans to +5V to represent logical 0. Because that way we will not get a constant signal +5V, which is hard to decide the beginning and the end of each bit.
 
@@ -150,19 +150,19 @@ The data link layer divides the stream of bits into manageable data units called
 The data link layer adds a header of the frame to define the sender and receiver of the frame. Most of the time, it also called as Media Access Control(MAC) address.
 
 3. Flow Control:
-If the data absorb by the receiver is less than the rate produced by the sender, the data link layer introduce a flow control mechamsm to prevent overloading the ...
+If the data absorb by the receiver is less than the rate produced by the sender, the data link layer introduce a flow control mechanism to prevent overloading the ...
 
 4. Error Control:
 The data link layer adds mechanisms to defect and retransmit damaged or lost frames. Error control is achieved through a traiver added to the end of the frame.
 
 5. Access Control:
-When two  or more devices are connected to the same link data link layer pritdcts are necessary to determine which device has control over the link at any given time.
+When two  or more devices are connected to the same link. Data link layer predicts are necessary to determine which device has control over the link at any given time.
 
 <h1 style="color:grey">Network Layer</h1>
 
->The network layer is responible for the delivery of packets from the original source to the final destination, possibly accross multiple networks.
+>The network layer is responsible for the delivery of packets from the original source to the final destination, possibly across multiple networks.
 
-Packet do not change during the end to end transfer, which means the packet may pass through several router and change the frame covering it for serveral times.
+Packet do not change during the end to end transfer, which means the packet may pass through several router and change the frame covering it for several times.
 
 The major duty of the network layer:
 
@@ -170,7 +170,7 @@ The major duty of the network layer:
 The network layer adds a header to the data unit coming from the upper layer that includes the logical address of the sender and receiver.
 
 2. Routing:
-When indepent networks or links are connected to create an internetwork. The connected deivces route the packets to their final destination. The network layer provides this mechinsm.
+When independent networks or links are connected to create an internetwork. The connected devices route the packets to their final destination. The network layer provides this mechanism.
 
 3. Internetworking:
 The network layer at the source computer needs to consult a routing table to find the logical address of the next hop.
@@ -193,7 +193,7 @@ Use a table to map the logical address of the next-hop into MAC address of the n
 The major duty of the transport layer:
 
 1. Port addressing:
-The transport layer header must includes a port address. The network layer get each packet to the traffic computer. The transport layer get the entre message to the certain process on that computer.
+The transport layer header must includes a port address. The network layer get each packet to the traffic computer. The transport layer get the entire message to the certain process on that computer.
 
 2. Segmentation and the addembly:
 A message is divided into transmittable segments, each segment connecting A se...... These ... emable the transport layer to ... the messages c... upon arrival to the destination.
@@ -217,37 +217,38 @@ Main services: FIle Transfer/ WWW
 
 <h1 style="color:grey">Open System Interconnection(OSI) Model</h1>
 
->It is developed by International organization for standerization(ISO). The OSI model is a theoretical model desicribe to show how a protocol stack should be implemened.
+>It is developed by International organization for standardization(ISO). The OSI model is a theoretical model describe to show how a protocol stack should be implemented.
 	
 7. [Application]
 6. [Presentation]
 5. [Session]
 4. [Transport]
 3. [Network]
-2. [Dataline]
+2. [Datalink]
 1. [Physical]
 
 The Session Layer is the ......
 
-The Presentation Layer were designed to handle syntax and sementanics of the information changes between the systems. It was designed for data translation, encrib..., deceibation and compression.
+The Presentation Layer were designed to handle syntax and semantics of the information changes between the systems. It was designed for data translation, encrib..., deceleration and compression.
 
-<h1 style="color:grey">Detials in Network Layer</h1>
+<h1 style="color:grey">Details in Network Layer</h1>
 
 >Duties of Network Layer:
 
-1. Internetworking: The logical giving of heterogemeous physical networks together to look like a single network.
+1. Internetworking: The logical giving of heterogeneous physical networks together to look like a single network.
 
-2. Packetizing: The network layer encatsulatrs data units received from upper layer protocols and makes packets out of them.
+2. Packetizing: The network layer encapsulates data units received from upper layer protocols and makes packets out of them.
 
-3. Addressing: The address used in the network layer must be <label style="color:red">uniquely and universaly</label> defined the connection of a host or a router to the Internet.
+3. Addressing: The address used in the network layer must be <label style="color:red">uniquely and universally</label> defined the connection of a host or a router to the Internet.
 
 4. Routing: Each IP packet can reach its destination via several routes. The
 
 5. Routing Protocol: A routing protocol is a ... of routers and procedures that .. routers in the internet ... other of changes.
 
-6. Fragmenting: Each router decapsulates the IP dataframs from the received forms processes it and then encapuates it in another frame. If the packet is too large it is fragmented.
+6. Fragmenting: Each router decapsulates the IP datagrams from the received forms processes it and then encapsulates it in another frame. If the packet is too large it is fragmented.
 
-7. Address Resolution: The Network Layer provides host-to-host addressing. The Dtat Link Layer needs physical addressing for node-to-node delivery. These two addressing are mapped to each other
+7. Address Resolution: The Network Layer provides host-to-host addressing. The Data Link Layer needs physical addressing for node-to-node delivery. These two addressing are mapped to each other.
+
 <h4 style="text-align:center">(IP address -> ARP -> physical address)</h4>
 
 >Process of Network Layer:
@@ -256,7 +257,7 @@ The Presentation Layer were designed to handle syntax and sementanics of the inf
 
 Data from Transport Layer => Packetizer => Processing module => Routing module(Routing Table) => Fragmentation nodule => to Data Link Layer
 
-Network Layer at the source: Network Layer at the source is responable for creating a packet that carries two universal addresses: a source address and a dertination address. If the packet is too large it is fragmented.
+Network Layer at the source: Network Layer at the source is responsible for creating a packet that carries two universal addresses: a source address and a destination address. If the packet is too large it is fragmented.
 
 <h3>At a Router:</h3>
 
@@ -413,7 +414,7 @@ An Internet address defines the connection of a divice to a specific network. Th
 
 Communication in the Internet can be achieved using <label style="color:red">Unicast, Mulitcast or Broadcast</label> addresses. No Broadcasting is allowed at the global Internet.
 * Unicast: one to one
-* Mulitcast: one to many
+* Multicast: one to many
 * Broadcast: one to all
 
 <h1 style="color:grey"> Classless Addressing</h1>
@@ -467,7 +468,7 @@ We can dividing the subnet based on the number of subnets, which will influence 
 
 <h4 style="text-align:center">Remember First Address & Last Address is special</h4>
 
-Eg: Diving 11 blocks in the given network address 12.24.74.0/24
+E.g.: Diving 11 blocks in the given network address 12.24.74.0/24
 00000000/26:0
 01000000/26:64
 10000000/27:128
@@ -475,7 +476,7 @@ Eg: Diving 11 blocks in the given network address 12.24.74.0/24
 11000000/28:192
 11010000/28:208
 11100000/28:224
-11110000/30:240s
+11110000/30:240
 11110100/30:244
 11111000/30:248
 11111100/30:252
@@ -483,9 +484,9 @@ Eg: Diving 11 blocks in the given network address 12.24.74.0/24
 <p style="color:red">Lecture 15</p>
 
 > IP is a connectionless protocol
-In a connectionless service, the network layer protocol treats each packet independently. The packets may or may not travel the same path to their destination. In a connectionless service, the decesion about the route of packet is made indivdually by each router.
+In a connectionless service, the network layer protocol treats each packet independently. The packets may or may not travel the same path to their destination. In a connectionless service, the decision about the route of packet is made individually by each router.
 
-<label style="color:red">Direct deliverly</label> occurs when the source and destination of a packet are located in the same physical network or if the delivery is between the last router and the destination host. 
+<label style="color:red">Direct delivery</label> occurs when the source and destination of a packet are located in the same physical network or if the delivery is between the last router and the destination host. 
 
 <label style="color:red">Indirect delivery</label> the packet goes from router to router until it reaches the one connected to the same physical network as its final destination. In an indirect delivery, the sender uses the destination IP address and the routing table to find the IP address of the next router to which the packet should be delivered.
 In an indirect delivery the address mapping between the IP address of the next router and the physical address of the next router is done by the <label style="color:red">address resolution protocol</label>.
@@ -502,7 +503,7 @@ Most times hop is a router
 Forwarding with classful addressing:
 * forwarding without subnetting: each routing table has three columns:
 	1. The network address of the destination network tells us where the destination host is located.
-	2. The next-hop address tells us to which router the packet must be delivered for an indirect delivery. For direct deilvery it is empty.
+	2. The next-hop address tells us to which router the packet must be delivered for an indirect delivery. For direct delivery it is empty.
 	3. The interface number defines the outgoing interface from which the packet is sent out. The router is usually connected to several networks. Each connection has a different interface.
 * The algorithm implemented:
 	1. The destination address of the packet is extracted.
@@ -526,13 +527,13 @@ Figure 6.8-10
 Forwarding with subnetting:
 Subnetting happens inside the organization. The model for fixed length subnetting:
 1. The model extract the destination address of the packet from the Header.(without the mask!)
-2. The destination address and the mask are used to extract the subnet adddress.
+2. The destination address and the mask are used to extract the subnet address.
 3. The table is searched using your subnet address to find the next hop address and the interface number. If no match is found the default is used. If the column is empty, it means the next hop is the destination Host.
 4. The next hop address and the interface number are given to ARP. 
 
 In Classless Addressing
 We need at least four columns. Mask, Network address, Next-hop address, Interface:
-Sort the mask from the longer to shoter. The last one will be default.
+Sort the mask from the longer to shorter. The last one will be default.
 For each row, mask is applied to the destination address, get the result, compare the result with the network address in the row. If it matches, we can get the next-hop address and interface and do ARP. If not matches, we need to go to the next row.
 
 <p style="color:red">Lecture 17</p>
@@ -549,17 +550,90 @@ ISP: Internet service provider.
 Regional ISP -> Local ISP -> Small ISP
 Large block => Small blocks
 
-To Solve the problem of Gieantic routing tables we can create a sense of Hierarchical in the routing tables.
+To Solve the problem of Gigantic routing tables we can create a sense of Hierarchical in the routing tables.
 
 Searching in classful address
-The routing table is divided into three tables (Called "Buckets") one for each class. When a packet arrives, the router applies the default mask to find the cooresponding bucket(A,B,C) the router then searches the cooresponding bucket.
+The routing table is divided into three tables (Called "Buckets") one for each class. When a packet arrives, the router applies the default mask to find the corresponding bucket(A,B,C) the router then searches the corresponding bucket.
 
 Searching in classless address
-The routing table is devided into "Buckets", one for each prefix, the router first tries the longest prefix. If the destination address is found in this bucket, the search is complete. If the address is not found, the next prefix is searched.
+The routing table is divided into "Buckets", one for each prefix, the router first tries the longest prefix. If the destination address is found in this bucket, the search is complete. If the address is not found, the next prefix is searched.
 
-A <label style="color:red">static routing table</label> contains information entered manually. The administrator enters the route for each destination into the table. When the table is created, it can not update automatically, when there is a change in the internet.
+<h1 style="color:grey">static routing table</h1> 
+It contains information entered manually. The administrator enters the route for each destination into the table. When the table is created, it can not update automatically, when there is a change in the internet.
 
 <h1 style="color:grey"> Dynamic Routing Table</h1>
-It is updated periodcally using one of the dynamic routing protocols whenever there is a change in the internet, such as shut down of a router or breaking of a link. The dynamic routing protocols update the tables in the router.
+It is updated periodically using one of the dynamic routing protocols whenever there is a change in the internet, such as shut down of a router or breaking of a link. The dynamic routing protocols update the tables in the router.
+
+<p style="color:red">Lecture 18</p>
+
+<h1 style="color:grey"> ARP & RARP </h1>
+
+<img src="Figure 7.1">
+
+A <label style="color:red">Logical Address</label> is an Internet address. Its jurisdiction is universal a logical address is unique universally.
+
+A <label style="color:red">Physical address</label> is a local address j.. is a local network it should be unique locally.
+
+The <label style="color:red">Address Resolution Protocol(ARP)</label> maps a logical address to a physical address.
+
+<img src="Figure7.2">
+
+<img src="Figure7.3">
+ARP request is broadcast and ARP reply is unicast
+Host will ignore the ARP request, if the IP address is not the host. Otherwise the host will reply to the sender.
+
+The Sender asks the receiver to announce its physical address when needed. ARP is designed to this purpose. Anytime, a host(router) needs to find the physical address of another host(router) on its network, it sends an <label style="color:red">ARP Query Packet<label style="color:red"> and the query packet is broadcast over the network.
+
+Every host(router) on the network receives and processes the ARP query packet. But only the intended recipient recognizes its IP address and sends back an <label style="color:red">ARP Response</label>.
+
+<h4 style="text-align:center">Formate of an ARP Packet</h4>
+<img src="Figure7.4">
+- Hardware type
+This is a 16-bit field defining the type of the network on which ARP is running.
+
+- Protocol Type
+This is a 16-bit field defining the protocol.
+
+- Hardware length
+This is an 8-bit field defining the length of the physical address in bytes.(6 bytes for Ethernet)
+
+- Protocol length
+This is an 8-bit field defining the length of the logical address in bytes.(4 bytes for IP address)
+
+- Operation
+This is a 16-bit field defining the the type of the packet.(why 16?)
+
+- Sender hardware address
+This is a variable-length field defining the physical address of the sender.
+
+- Sender protocol address
+This is a variable-length field defining the protocol address of the sender.
+
+- Target hardware address
+This is a variable-length field defining the physical address of the target. For ARP request is field is all 0s, because the sender foes not know the physical address of the target.
+
+- Target protocol address
+This is a variable-length field defining the protocol address of the target.
+
+<h4 style="text-align:center">Encapsulation of ARP packet</h4>
+
+<img src="Figure7.5">
+A ARP packet is encapsulated into a datalink frame.
+
+<h4 style="text-align:center">The ARP process</h4>
+1. The sender knows the IP address of the target.
+2. IP asks ARP to create an ARP request packet.
+3. The packet is encapsulated in a frame using the <label style="color:red">physical broadcast address(All FFs MAC address)</label> as the destination address.
+4. All machines except the one targeted drop the packet.
+5. The target machine replies with an ARP Reply Packet containing its physical address. This packet is unicast.
+6. The sender receives the reply packet.
+7. The IP datagram is now encapsulated in a frame and is unicast to the target machine.
+
+
+
+
+
+
+
 
 
