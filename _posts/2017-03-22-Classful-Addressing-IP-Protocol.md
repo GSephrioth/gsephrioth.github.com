@@ -28,9 +28,11 @@ Addresses in A, B, and C are for <label style="color:red">universal communicatio
 
 An IP addresses in classes A, B and C is divided into <label style="color:red">Net-id </label>and <label style="color:red"> Host ID </label>
 
+
 * Class A: 1 Byte defines Net-id and 3 Bytes defines Host ID.
 * Class B: 2 Byte defines Net-id and 2 Bytes defines Host ID.
 * Class C: 3 Byte defines Net-id and 1 Bytes defines Host ID.
+
 
 * <b>Class A</b> is divided into 128 blocks with each block having a different Net-id, and 2^24 unique IP addresses. The first covers address from <label style="color:red">0.0.0.0 to 0.255.255.255</label>, the 2nd block from <label style="color:red">1.0.0.0 to 1.255.255.255</label>, etc. Class A addresses were designed for large organization with a large number of hosts or routers attached to their network, Or it will be wasted.
 
