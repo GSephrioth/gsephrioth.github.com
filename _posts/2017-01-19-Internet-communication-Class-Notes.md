@@ -2,10 +2,10 @@
 layout: post
 title:  "TCP/IP protocol suite"
 image: ''
-date:   2017-03-10 10:00:00
+date:   2017-03-22 10:00:00
 comments: true
 description: 'Lectures in IIT about TCP/IP protocol suite'
-series: learn
+series: Notes
 ---
 
 <p style="color:red">Lecture 2 & 3</p>
@@ -117,23 +117,26 @@ Each layer build upon the service of the layer below it. e.g. layer 3 is based o
 
 It costs quite a lot to change a protocol, especially when it does not suits the interface of upper layer and below layer. Because change of interface means change the protocol, which result into a change of the whole networking system. That is a revolution.
 
-As long as a layer....
+As long as a layer provides the expected service to the layer above it. The specific implementation of its function can be modified or replace without requiring changes to the surrounding layer.
 
-At each layer a Header can be added to the data unit. at layer 2 a T.. is added as ...
+At each layer a Header can be added to the data unit. At layer 2 a Trailer is added as well.
 
 <h1 style="color:grey">Physical Layer</h1>
 
 >the physical layer is responsible for transmitting individual bits from one node to the next.
 
-the major duties of the physical layer: Physical characteristics of interfaces and media. The physical layer defines characteristics of the interface between the divides and the transmission meaning. It also defines the type of transmission media.
+the major duties of the physical layer: 
+1. Physical characteristics of interfaces and media
+The physical layer defines characteristics of the interface between the divides and the transmission meaning. It also defines the type of transmission media.
 
-representation of logical bits: voltage, light, etc. Most times we use +5V trans to -5V to represent logical 1; -5V trans to +5V to represent logical 0. Because that way we will not get a constant signal +5V, which is hard to decide the beginning and the end of each bit.
+2. representation of logical bits
+Voltage, light, etc. Most times we use +5V trans to -5V to represent logical 1; -5V trans to +5V to represent logical 0. Because that way we will not get a constant signal +5V, which is hard to decide the beginning and the end of each bit.
 
-Data rate
-The transmission layer ...... of a bit.
+3. Data rate
+The transmission rate is also defined by the physical layer. The physical layer defines the duration of a bit.
 
-Synchronization of bits (difference of CPU clock might cause a problem)
-
+4. Synchronization of bits 
+Difference of CPU clock might cause a problem.
 
 <p style="color:red">Lecture 5</p>
 
@@ -150,10 +153,10 @@ The data link layer divides the stream of bits into manageable data units called
 The data link layer adds a header of the frame to define the sender and receiver of the frame. Most of the time, it also called as Media Access Control(MAC) address.
 
 3. Flow Control:
-If the data absorb by the receiver is less than the rate produced by the sender, the data link layer introduce a flow control mechanism to prevent overloading the ...
+If the data absorb by the receiver is less than the rate produced by the sender, the data link layer imposes a flow control mechanism to prevent overwhelming the receiver.
 
 4. Error Control:
-The data link layer adds mechanisms to defect and retransmit damaged or lost frames. Error control is achieved through a traiver added to the end of the frame.
+The data link layer adds mechanisms to defect and retransmit damaged or lost frames. Error control is achieved through a trailer added to the end of the frame.
 
 5. Access Control:
 When two  or more devices are connected to the same link. Data link layer predicts are necessary to determine which device has control over the link at any given time.
@@ -195,17 +198,17 @@ The major duty of the transport layer:
 1. Port addressing:
 The transport layer header must includes a port address. The network layer get each packet to the traffic computer. The transport layer get the entire message to the certain process on that computer.
 
-2. Segmentation and the addembly:
-A message is divided into transmittable segments, each segment connecting A se...... These ... emable the transport layer to ... the messages c... upon arrival to the destination.
+2. Segmentation and the reassembly:
+A message is divided into transmittable segments, each segment connecting A sequence number. These numbers enable the transport layer to reassemble the messages correctly upon arrival to the destination.
 
 3. Connection Control:
-The transport layer can be either connectionless or connection oranted. A connectionless transport layer trates each segments as a independ unit and deliever it to transport layer at the destination machine. A connected oranted transport layer crates a connection with the transport layer at the destination machine before transfering the segments. After all the data are transfered the connection is terminated.
+The transport layer can be either connectionless or connection oriented. A connectionless transport layer treats each segments as a independent unit and deliver it to transport layer at the destination machine. A connected oriented transport layer crates a connection with the transport layer at the destination machine before transferring the segments. After all the data are transfered the connection is terminated.
 
 4. Flow Control:
 Flow control at this layer is performed end-to-end rather than across a single link.
 
 5. Error control:
-Error control at this layer is performed end-to-end rather than across a single link. To sending transport layer to make sure that the entire message arrives at the recevive transport layer without errors. 
+Error control at this layer is performed end-to-end rather than across a single link. To sending transport layer to make sure that the entire message arrives at the receive transport layer without errors. 
 
 <h1 style="color:grey">Application Layer</h1>
 
@@ -227,9 +230,9 @@ Main services: FIle Transfer/ WWW
 2. [Datalink]
 1. [Physical]
 
-The Session Layer is the ......
+The <label style="color:red">Session Lay</label> is the network dialog controller. It was designed to establish maintain an Synchronize the interaction between communicating system.
 
-The Presentation Layer were designed to handle syntax and semantics of the information changes between the systems. It was designed for data translation, encrib..., deceleration and compression.
+The <label style="color:red">Presentation Layer</label> were designed to handle syntax and semantics of the information changes between the systems. It was designed for data translation, Encryption, decryption and compression.
 
 <h1 style="color:grey">Details in Network Layer</h1>
 
@@ -243,7 +246,7 @@ The Presentation Layer were designed to handle syntax and semantics of the infor
 
 4. Routing: Each IP packet can reach its destination via several routes. The
 
-5. Routing Protocol: A routing protocol is a ... of routers and procedures that .. routers in the internet ... other of changes.
+5. Routing Protocol: A routing protocol is a combination of rules and procedures that lets routers in the internet inform each other of changes.
 
 6. Fragmenting: Each router decapsulates the IP datagrams from the received forms processes it and then encapsulates it in another frame. If the packet is too large it is fragmented.
 
@@ -268,27 +271,27 @@ Network Layer at the router: Network Layer at the router is responsible for rout
 
 <h3>At a Destination:</h3>
 
-Data from Data Link Layer => Processing module => Error checker => Reassemly nodule (Reassembly Table) => to Transport Layer
+Data from Data Link Layer => Processing module => Error checker => Reassembly nodule (Reassembly Table) => to Transport Layer
 
 Network Layer at the Destination: Network Layer at the Destination make sure that the destination address of the packet is the same as the address of the host.
-<h4 style="text-align:center">((To make sure the packet have reached the right place)</h4>
-It also checks if the packet has crupted during transmission and reassemable the original packet.
+<h4 style="text-align:center">(To make sure the packet have reached the right place)</h4>
+It also checks if the packet has corrupted during transmission and reassemble the original packet.
 
 <p style="color:red">Lecture 8</p>
 
 <h1 style="color:grey">Switching</h1>
 
-Switching: Circuit Switching + Packet Switching (Vertual circuit approach + Datagram approach)
+Switching: Circuit Switching + Packet Switching (Virtual circuit approach + Datagram approach)
 
-Circuit Switching creates a point-to-point link sending messages directed and continues. But it is not so efficient, beacuse the size of message is unknown. So it is used for old voice based system, like telephone.
+Circuit Switching creates a point-to-point link sending messages directed and continues. But it is not so efficient, because the size of message is unknown. So it is used for old voice based system, like telephone.
 
-Packed Switch divides the message into packets, which have the same size. It is fraquently used in Nowadays network. 
+Packed Switch divides the message into packets, which have the same size. It is frequently used in Nowadays network. 
 
-<h4 style="text-align:center;color:pink">Study Vertual circuit approach on our own. </h4>
+<h4 style="text-align:center;color:pink">Study Virtual circuit approach on our own. </h4>
 
 Switching at the network layer in the Internet is done using the datagram approach to packet switching.
 
-In the datagram approach to traget switching each packet is treated independent of all ... A traget is ... a piece of a ... transmission packets on the approach are re... to as datagrams.
+In the datagram approach to target switching each packet is treated independently of all others. A packet is just a piece of a multi-packet transmission packets on the approach are referred to as <label style="color:red">Datagrams</label>.
 
 Communication at the network layer in the Internet is connectionless.
 
@@ -296,45 +299,43 @@ Communication at the network layer in the Internet is connectionless.
 
 <h4 style="text-align:center">An IP address is a 32-bit address.</h4>
 
-The identifier used in the network layer of the implenment model to identify each divice connected to the Internet is called <label style="color:red">Internet address</label> or <label style="color:red">IP address </label>
+The identifier used in the network layer of the implement model to identify each device connected to the Internet is called <label style="color:red">Internet address</label> or <label style="color:red">IP address </label>
 
 In <label style="color:red">Binary notation</label> the IP address is displayed as 32-bits. 
 
-In <label style="color:red">Dotted-decimal notation</label> Internet addresses are writen in decimal form with a dot separating the Bytes.
+In <label style="color:red">Dotted-decimal notation</label> Internet addresses are written in decimal form with a dot separating the Bytes.
 
 In classful addressing the address space is divided into five classes: A, B, C, D, and E.
 
 <img src="/assets/img/having-fun/IPaddress.jpg">
 
-<img src="/assets/img/having-fun/IPaddress2.jpg">
-
-When the address is given in dotted decimal notation, then we need to look at the first byte to determin the class of the address.
+When the address is given in dotted decimal notation, then we need to look at the first byte to determine the class of the address.
 
 Addresses in A, B, and C are for <label style="color:red">universal communication</label> from one source to one destination. Addresses on class D are for <label style="color:red"> multicast communication </label>, from one source to a group of destination. Addresses in class E are <label style="color:red">reserved </label> for future use.
 
-An IP addresses in classes A, B and C is divided into <label style="color:red">Netid </label>and <label style="color:red"> Host ID </label>
+An IP addresses in classes A, B and C is divided into <label style="color:red">Net-id </label>and <label style="color:red"> Host ID </label>
 
-* Class A: 1 Byte defines Netid and 3 Bytes defines Host ID.
-* Class B: 2 Byte defines Netid and 2 Bytes defines Host ID.
-* Class C: 3 Byte defines Netid and 1 Bytes defines Host ID.
+* Class A: 1 Byte defines Net-id and 3 Bytes defines Host ID.
+* Class B: 2 Byte defines Net-id and 2 Bytes defines Host ID.
+* Class C: 3 Byte defines Net-id and 1 Bytes defines Host ID.
 
 <p style="color:red">Lecture 9</p>
 
-* <b>Class A</b> is divided into 128 blocks with each block having a dfferent Netid, and 2^24 unique IP addresses. The first covers address from <label style="color:red">0.0.0.0 to 0.255.255.255</label>, the 2nd block from <label style="color:red">1.0.0.0 to 1.255.255.255</label>, etc. Class A addresses were designed for large organization with a large number of hosts or routers attached to their network, Or it will be wasted.
+* <b>Class A</b> is divided into 128 blocks with each block having a different Net-id, and 2^24 unique IP addresses. The first covers address from <label style="color:red">0.0.0.0 to 0.255.255.255</label>, the 2nd block from <label style="color:red">1.0.0.0 to 1.255.255.255</label>, etc. Class A addresses were designed for large organization with a large number of hosts or routers attached to their network, Or it will be wasted.
 
-* <b>Class B</b> is divided into (191-127)*256=16384 blocks with each block having a dfferent Netid, and 2^16 unique IP addresses. The first covers address from <label style="color:red">128.0.0.0 to 128.0.255.255</label> with Netid <label style="color:red">128.0</label>, the Last block from <label style="color:red">191.255.0.0 to 191.255.255.255</label>, with Netid <label style="color:red">191.255</label> , etc. Class A addresses were designed for midsize organization with Tens of thousands of hosts or routers.
+* <b>Class B</b> is divided into (191-127)*256=16384 blocks with each block having a different Net-id, and 2^16 unique IP addresses. The first covers address from <label style="color:red">128.0.0.0 to 128.0.255.255</label> with Net-id <label style="color:red">128.0</label>, the Last block from <label style="color:red">191.255.0.0 to 191.255.255.255</label>, with Net-id <label style="color:red">191.255</label> , etc. Class A addresses were designed for mid-size organization with Tens of thousands of hosts or routers.
 
-* <b>Class C</b> is divided into 2097152 blocks with each block having a dfferent Netid, and 2^8 unique IP addresses. The first covers address from <label style="color:red">192.0.0.0 to 192.0.0.255</label>, the last block from <label style="color:red">223.255.255.0 to 223.255.255.255</label>, etc. Class A addresses were designed for large organization with a large number of hosts or routers attached to their network, Or it will be wasted.
+* <b>Class C</b> is divided into 2097152 blocks with each block having a different Net-id, and 2^8 unique IP addresses. The first covers address from <label style="color:red">192.0.0.0 to 192.0.0.255</label>, the last block from <label style="color:red">223.255.255.0 to 223.255.255.255</label>, etc. Class A addresses were designed for large organization with a large number of hosts or routers attached to their network, Or it will be wasted.
 
-<h4 style="text-align:center">Netid is part of Network Address</h4>
+<h4 style="text-align:center">Net-id is part of Network Address</h4>
 
-'Netid + All 0s' is the Network address.
+'Net-id + All 0s' is the Network address.
 
 The network address is an address that defines the network itself. It can not be assigned to a host or router.
 
-A network address has several proderties :
+A network address has several properties :
 
-* A Hostid byte are 0s.
+* A Host-id byte are 0s.
 * A network address defines the network to the rest of the internet.
 * The network address is the first address in the block.
 
@@ -344,9 +345,9 @@ The first address in the block defines the <label style="color:red">Network Addr
 
 IP addresses are designed with <label style="color:red">two levels of hierarchy(层次结构)</label>. A position of a 32-bit address indicates the network(Net id) and a portion indicates the host(Host id) in the network.
 
-Often the network needs to be devided into several <label style="color:red">subnetworks(subnets)</label>, with each subnetwork having its own <label style="color:red">subnetwork address</label>. When we devide a network into several subnets we have three levels of hierarchy.
+Often the network needs to be divided into several <label style="color:red">subnetworks(subnets)</label>, with each subnetwork having its own <label style="color:red">subnetwork address</label>. When we divide a network into several subnets we have three levels of hierarchy.
 
-Adding subnetwork creates an intermediate level of hoerarchy in the Ip address. Now we have 3 levels: site, subnet, host.
+Adding subnetwork creates an intermediate level of hierarchy in the IP address. Now we have 3 levels: site, subnet, host.
 
 The router outside the organization route the packet based on the network address. The router inside the organization routes the packet based on the subnet address.
 
@@ -366,7 +367,7 @@ A default mask is a 32-bit binary number that gives the network address when "an
 3. The router looks in its routing table to find out how to route the packet to this destination. 
 
 ## how does subnet mask works
-The number of is in a subnet mask '1's more than the numberof '1's in the conrresponding default mask.
+The number of is in a subnet mask '1's more than the number of '1's in the corresponding default mask.
 
 1. The router must know the mask. We assume it is /19.
 2. The router applies the mask to the address, 190.240.33.91.  The subnet address is 190.240.32.0. 19 = 8+8+3 => Mask is 255.255.224.0.
@@ -377,7 +378,7 @@ The number of is in a subnet mask '1's more than the numberof '1's in the conrre
 The default mask creates the network address.
 The subnet mask creates the subnet address.
 
-Today we use only contingous masks (a run of 1s followed by a run of 0s)
+Today we use only contiguous masks (a run of 1s followed by a run of 0s)
 
 Given the IP address we can find the subnet address the same way we found the network address. We applying the mask to the address.
 
@@ -389,36 +390,36 @@ two addresses in each subnet are added to the list of special addresses. The fir
 
 Using the first byte to decide the class of the network, make the mask shorter to create a supernetwork mask.
 
-The notation 195.14.192.3/24 shows a class C address, with a default mask. But the address 195.14.192.3/21 shows a supernet of class C address, with the mask 255.255.248.0, which conbined by 2^3 = 8 class C networks.
+The notation 195.14.192.3/24 shows a class C address, with a default mask. But the address 195.14.192.3/21 shows a supernetwork of class C address, with the mask 255.255.248.0, which combined by 2^3 = 8 class C networks.
 <img src="">
 
-<h1 style="color:grey">multihomed devices</h1>
+<h1 style="color:grey">multi-homed devices</h1>
 
 <img src="">
 
-A computer that is connected to different networks is called a multihomed computer and will have more than one address.
+A computer that is connected to different networks is called a multi-homed computer and will have more than one address.
 
-An Internet address defines the connection of a divice to a specific network. The monement of a computer from one network to another means that its IP address nust be changed.
+An Internet address defines the connection of a device to a specific network. The movement of a computer from one network to another means that its IP address must be changed.
 
 <h1 style="color:grey">Special Addresses</h1>
 
-* Network Address: The first address in the block defines the network address. (Netid: Specific + Hostid: All 0s)
+* Network Address: The first address in the block defines the network address. (Net-id: Specific + Host-id: All 0s)
 
-* Direct Broadcat Address: If the Hostid is all 1s, the address is called a direct broadcast address. It is used by a router to send a packet to all hosts in this specific network. All hosts will accept a packet having this type of destination address. (Netid: Specific + Hostid: All 1s)
+* Direct Broadcast Address: If the Host-id is all 1s, the address is called a direct broadcast address. It is used by a router to send a packet to all hosts in this specific network. All hosts will accept a packet having this type of destination address. (Net-id: Specific + Host-id: All 1s)
 
-* Limited Broadcast Address: An address with all 1s for the Netid and the Host id defines a broadcast address in the current network. A host that wants to send a message to every others. Host can use this address as a destination address in an IP packet. A router will block a packet having this type of address to confirm the broadcasting to the local network. (Netid and Hostid: All 1s)
+* Limited Broadcast Address: An address with all 1s for the Net-id and the Host id defines a broadcast address in the current network. A host that wants to send a message to every others. Host can use this address as a destination address in an IP packet. A router will block a packet having this type of address to confirm the broadcasting to the local network. (Net-id and Host-id: All 1s)
 
-* Loopback Address: The IP address with the first byte 127 is used for the loopback address, which is an address to test software on a machine. When this address is used, the packet never leaves the machine. It simply returns to the protocol software. (Netid and Hostid: 127.X.Y.Z)
+* Loopback Address: The IP address with the first byte 127 is used for the loopback address, which is an address to test software on a machine. When this address is used, the packet never leaves the machine. It simply returns to the protocol software. (Net-id and Host-id: 127.X.Y.Z)
 
 <p style="color:red">Lecture 12</p>
 
-Communication in the Internet can be achieved using <label style="color:red">Unicast, Mulitcast or Broadcast</label> addresses. No Broadcasting is allowed at the global Internet.
+Communication in the Internet can be achieved using <label style="color:red">Unicast, Multicast or Broadcast</label> addresses. No Broadcasting is allowed at the global Internet.
 * Unicast: one to one
 * Multicast: one to many
 * Broadcast: one to all
 
 <h1 style="color:grey"> Classless Addressing</h1>
-In classless addressing <label style="color:red">variable-length blockes</label> are assigned that belong to no class. In this architecture, the entire address space (2^32 addre
+In classless addressing <label style="color:red">variable-length blocks</label> are assigned that belong to no class. In this architecture, the entire address space (2^32 addresses) is divided into block of different sizes. 
 
 ## Rules:
 1. The number of addresses in a block must be power of 2.
@@ -429,16 +430,20 @@ In classless addressing <label style="color:red">variable-length blockes</label>
 
 Problem 1: which of the following can be the beginning address of a block that contains 16 addresses?
 	a. 205.16.37.32  b. 190.16.42.44  c. 17.17.33.80  d. 123.45.24.52
-	计算IP Address的大小时，前3个字节分别要乘上256，256^2，256^3，肯定都能被16整除，第4个字节是32也能被16整除，所以4个字节加起来可以被整除。
-	所以，只要一个block包含少于256个地址，并且符合第一条规则，那么只需要看最后一个字节是否能被整除。
+
+When calculating the IP Address, first three bytes will multiply 256, 256^2, 256^3, which is always divisible by 16. So the 4th byte determines whether the IP address is divisible by 16.
+
+We can infer that if the size of the block is no larger than 256, which is 2,4,8,16,32,64,128 and 256, we can always determine whether the first follows the rules above via looking at the 4th byte. (计算IP Address的大小时，前3个字节分别要乘上256，256^2，256^3，肯定都能被16整除，第4个字节是32也能被16整除，所以4个字节加起来可以被整除。
+	所以，只要一个block包含少于256个地址，并且符合第一条规则，那么只需要看最后一个字节是否能被整除。)
 
 十进制:Decimal System 
 二进制:Binary System
 可以把IP视为256进制，每个Byte是一个数字。
+可以把IP视为256进制，每个Byte是一个数字。
 
 <p style="color:red">Lecture 13</p>
 
-In <label style="color:red">classful addressing</label> when an address is given we can first find the class of the address. We can then apply the mask to find the begining address and the range of addresses.
+In <label style="color:red">classful addressing</label> when an address is given we can first find the class of the address. We can then apply the mask to find the beginning address and the range of addresses.
 
 In <label style="color:red">classless addressing</label> when an address is given the block the address belongs to can not be found unless we have the mask. The 'N' after the slash defines the number of bits that are the same in every addresses in the block.
 
@@ -446,15 +451,14 @@ In <label style="color:red">classless addressing</label> when an address is give
 
 <h4 style="text-align:center"> Classful addressing is a special case of classless addressing.</h4>
 
-If n=20, it means that 20 lefthost bits are idenfical in each addresses with 12 bits not the same.
+If n=20, it means that 20 leftmost bits are identical in each addresses with 12 bits not the same.
 The prefix is another name for the common part of the address range(similar to Net Id)
 The suffix is the varying part.(similar to Host id) The suffix length is 32-n.
 We can "AND" the mask and the address to find the first address.
 
-不是总要把整个IP变成bytes，很多时候只要变一部分就能得出结果。
-
-There are two methods that find the last address in the block in the first method we add the number of addresses in the block minvs to the first .....
-In the 2nd method we add the first address to the complement of the mask
+There are two methods that find the last address in the block:
+- In the first method we add the number of addresses in the block to the first address.
+- In the 2nd method we add the first address to the complement of the mask.
 
 <p style="color:red">Lecture 14</p>
 
