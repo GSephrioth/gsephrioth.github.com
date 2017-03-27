@@ -2,32 +2,15 @@
 
 A simple and elegant Jekyll theme based on Spacemacs. The theme works well on mobile devices as well.
 
-See a live demo [here](https://victorvoid.github.io/space-jekyll-template/).
+See a live demo [here](https://gsephrioth.github.io).
 
-![](https://github.com/victorvoid/space-jekyll-template/blob/master/screenshot.png?raw=true)
+![](hhttps://github.com/GSephrioth/gsephrioth.github.com/master/screenshot.png?raw=true)
 
 # Site/User Settings
 
 customize your site in ``_config.yml``
 
 ```ruby
-
-# Site settings
-description: A blog about lorem ipsum
-baseurl: "" # the subpath
-url: "" # the base hostname &/|| protocol for your site 
-
-# User settings
-username: Lorem Ipsum
-user_description: Lorem Developer
-user_title: Lorem Ipsum
-email: lorem@ipsum.com
-twitter_username: loremipsum
-github_username:  loremipsum
-gplus_username:  loremipsum
-disqus_username: loremipsum
-
-```
 
 ## How to create a post ? 
 
