@@ -1,19 +1,19 @@
 # Site settings
-title: Gsephrioth - Software Engineer
-description: "A blog about Gsephrioth ..."
+title: Elliott Chen - Software Engineer
+description: "A blog about Elliott Chen ..."
 baseurl: "" # for test: remove string '/space-jekyll-templa' to ''
 url: "https:gsephtioth.github.io" # for test: remove string 'http://victorvoid.github.io' to '' but in production: 'https:yourusername.githu.io'
 # User settings
-username: Mr. Gsephrioth
-user_title: Gsephrioth - Web Site
-email: Gsephrioth@gmail.com
+username: Mr. Elliott Chen
+user_title: Elliott Chen - Web Site
+email: gsephtioth@gmail.com
 twitter_username: 
-github_username:  Gsephrioth
-gplus_username:  Gsephrioth
-disqus_username: Gsephrioth
+github_username:  Elliott Chen
+gplus_username:  Elliott Chen
+disqus_username: Elliott Chen
 
 # Build settings
-markdown: kramdown
+markdown: markdown
 highlighter: Rouge
 permalink: /:title/
 
@@ -40,8 +40,8 @@ links:
 # projects in header index
 projects:
   - name: Map of NewYork Subway
-    url: https://github.com/GSephrioth/NewYorkSubway
+    url: https://github.com/Elliott Chen/NewYorkSubway
   - name: Graph package
-    url: https://github.com/GSephrioth/Graph
+    url: https://github.com/Elliott Chen/Graph
 # exclude my node related stuff
 exclude: ['package.json', 'src', 'node_modules']
