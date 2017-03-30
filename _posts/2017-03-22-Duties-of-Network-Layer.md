@@ -10,7 +10,7 @@ series: TCP/IP
 
 <h1 style="color:grey">Duties of Network Layer</h1>
 
->Duties of Network Layer:
+>The network layer is responsible for host-to host delivery for carrying packet through the internet through several physical networks. The main duties are shown as below:
 
 1. Internetworking: The logical giving of heterogeneous physical networks together to look like a single network.
 
@@ -18,7 +18,7 @@ series: TCP/IP
 
 3. Addressing: The address used in the network layer must be <label style="color:red">uniquely and universally</label> defined the connection of a host or a router to the Internet.
 
-4. Routing: Each IP packet can reach its destination via several routes. The
+4. Routing: Each IP packet can reach its destination via several routes. The routers connecting the LANs and LANs make the routing decision. 
 
 5. Routing Protocol: A routing protocol is a combination of rules and procedures that lets routers in the internet inform each other of changes.
 
