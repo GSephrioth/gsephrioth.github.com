@@ -1,16 +1,40 @@
-# Space Jekyll
+# Grape Jekyll
 
 A simple and elegant Jekyll theme based on Spacemacs. The theme works well on mobile devices as well.
 
 See a live demo [here](https://gsephrioth.github.io).
 
-![](hhttps://github.com/GSephrioth/gsephrioth.github.com/master/screenshot.png?raw=true)
+![](https://github.com/GSephrioth/gsephrioth.github.com/blob/master/screenshot.png)
 
-# Site/User Settings
+# Settings
 
 customize your site in ``_config.yml``
 
+## Site settings
 ```ruby
+title: XuzhuChen - Software Engineer
+description: "A blog about XuzhuChen ..."
+baseurl: "" # for test: remove string '/space-jekyll-templa' to ''
+url: "https://gsephrioth.github.io" # for test: remove string 'http://yourusername.github.io' to '' but in production: 'https:yourusername.githu.io'
+```
+
+## User settings
+```ruby
+username: Mr. XuzhuChen
+user_title: XuzhuChen - Web Site
+email: Gsephrioth@gmail.com
+twitter_username: 
+github_username:  Gsephrioth
+gplus_username:  Gsephrioth
+disqus_username: Gsephrioth
+```
+
+## Build settings
+```ruby
+markdown: kramdown
+highlighter: Rouge
+permalink: /:title/
+```
 
 ## How to create a post ? 
 
@@ -32,7 +56,7 @@ twitter_text: 'How to speak with Lorem'
 ---
 ```
 
-## License
+# License
 The MIT License (MIT)
 
 Copyright (c) 2016 Victor Igor

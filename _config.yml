@@ -1,13 +1,13 @@
 # Site settings
 title: XuzhuChen - Software Engineer
-description: "A blog about XuzhuChen ..."
+description: "Master of computer science in Illions institudation of Technology"
 baseurl: "" # for test: remove string '/space-jekyll-templa' to ''
 url: "https://gsephrioth.github.io" # for test: remove string 'http://yourusername.github.io' to '' but in production: 'https:yourusername.githu.io'
+
 # User settings
 username: Mr. XuzhuChen
 user_title: XuzhuChen - Web Site
 email: Gsephrioth@gmail.com
-twitter_username: 
 github_username:  Gsephrioth
 gplus_username:  Gsephrioth
 disqus_username: Gsephrioth
