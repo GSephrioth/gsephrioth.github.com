@@ -2,7 +2,7 @@
 layout: post
 title:  "TCP/IP protocol suite"
 image: ''
-date:   2017-03-22 10:00:00
+date:   2017-04-04 10:00:00
 comments: true
 description: 'Lectures in IIT about TCP/IP protocol suite'
 series: Notes
@@ -154,5 +154,57 @@ The <label style="color:red">cache control module</label> is responsible for mai
 		a. Decrease the value of timeout by the value of elapsed time(经过的时间).
 		b. If time-out less than or equal to 0. Change the state to "free", Destroy the corresponding queue and drop the packets in it.
 
+<p style="color:red">Lecture 20</p>
 
+<h1 style="color:grey">The IP datagram</h1>
+
+IP is an unreliable and connectionless datagram protocol. The best effort delivery service IP does is its......
+
+Packets in the IP layer are called datagrams. A datagram is a variable length packet consisting of two parts: Header and Data. 
+
+The Header is 20 to 60 bytes in length and contains information essential to routing and delivery.
+
+<img src="Figure8.2">
+
+<h4 style="text-align:center">IP header format</h4>
+- Version
+This 4-bit field defines the version of the IP protocol
+
+- Header Length(HLEN)
+This 4-bit field defines the total length of the datagram header in 4 byte times.
+length of header = header length * 4
+
+- Differentiated services
+
+<img src="Figure8.3">
+
+- Service type The first 3-bits are called precedence bits. The 4-bits are called TOS bits. And the last bit is not used.
+
+- Precedence bits
+It is a 3-bit subfield ranging from 000 to 111. The precedence defines the priority of the datagram in issues such as congestion.
+
+- Type of service (TOS) bits
+We have 5 different types of service resolved by application programs.
+
+<img src="Table8.1">
+
+- Interactive activities
+Activities re... immediate attention and activities re... immediate response need min delay
+Activities that send bulk data re... max throgh...
+Management activities need max reliability background activities need min cost.
+
+- Differentiated services
+In this interpretation, the first 6-bits make up the codepoint subfield and the last 2-bits are not used.
+The codepoint subfield can be used into different ways.
+When the 3 right bits are 0s, The 3 left most bits are interpreted the same as the precedence bits in the service type interpretation. The precedence defines 8-level priority of the datagram
+
+......
+
+- Time to live
+Today this field is mostly used to control the max number of hops visited by the datagram. When a source host sends the datagram, it stores a number in this field each router that processes the datagram decreases this number by one. If this value is zero the router discards the datagram.
+
+- Protocol 
+This 8-bit field defines the high level protocol that uses the services of the IP layer.
+
+<img src="Table8.4">
 
