@@ -86,7 +86,6 @@ Each data unit layer protocol has maximum size of the data field. when a datagra
 
 The maximum length of the IP datagram is 65535 bytes. Transmission is very efficient if we use a protocol with an MTU of this size. However, for other physical networks, we must divide the datagram to make it possible to pass through these networks, which is called fragmentation.
 
-
 > Fragmentation
 - Identification
 This 16-bits field identifies a datagram originating from the source to grantee uniqueness. The IP protocol uses a counter to label the datagrams the counter is initialized to a positive number, when the IP protocol sends a datagram it copies the current value of the counter to the identification field.
@@ -96,4 +95,18 @@ This is a 3-bit field. So the first bit is reserved.
 The 2nd bit is called 'don`t fragment' bit, 1 means not allowed to fragment, if it can not be passed through any physical network, it will be discarded.
 The 3rd bit is called 'more fragment' bit, 1 means the datagram is not the last fragment, there are more fragments after this one. 0 means the datagram is the last fragment or only fragment.
 
+<p style="color:red">Lecture 22</p>
+
+Talk about PJ
+
+- Fragmentation offset
+This 13-bit field shows the relative position of this Fragment with respect to the whole datagram. It is the offset of the data in the original datagram measured in units of 8 bytes.
+This process hosts or routers that fragment datagram introduce the size of each fragment so that the first byte number is divisible by 8.
+
+The final destination host can reassemble the original datagram from the fragments received using the following strategy:
+1. The first fragment has an offset value of 0
+2. Divide the length of the first fragment by 8. The second fragment has an offset value equal to that result.
+3. Divide the total length of the first and second fragment by 8. The third fragment has an offset equal to that result.
+4. COntinue this process.
+5. The last fragment has the 'more fragment' bit equal to 0.
 
