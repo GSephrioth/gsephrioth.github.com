@@ -57,7 +57,7 @@ When the right most bits are not all 0s, the 6-bits define services based on the
 - Total length
 This is a 16-bit field that defines the total length(Header + data) of the IP datagram in bytes. Since the field is 16 bits, the total length of the IP datagram is limited to 2^16 =  65536 bytes, of which 20-40 bytes are the header add the rest is data.
 
-- Time to live
+- Time to live(TTL)
 Today this field is mostly used to control the max number of hops visited by the datagram. When a source host sends the datagram, it stores a number in this field each router that processes the datagram decreases this number by one. If this value is zero the router discards the datagram.
 
 - Protocol 
@@ -108,5 +108,46 @@ The final destination host can reassemble the original datagram from the fragmen
 2. Divide the length of the first fragment by 8. The second fragment has an offset value equal to that result.
 3. Divide the total length of the first and second fragment by 8. The third fragment has an offset equal to that result.
 4. COntinue this process.
-5. The last fragment has the 'more fragment' bit equal to 0.
+5. The last fragment has the 'more fragment' bit ( AKA M bit) equal to 0.
+
+<p style="color:red">Lecture 23</p>
+
+First Byte = Offset Value * 8
+Last Byte = First byte + Total length - HLEN * 4 - 1
+> remember the '-1' of the last byte
+
+<h4 style="text-align:center">IP components</h4>
+
+<img src="Figure8.26">
+
+The IP packet involves the following components:
+- Header-adding module
+- Processing module
+- Forwarding module
+- Reassembly module
+- Reassembly table
+- Routing table
+- MTU table
+
+The <label style="color: red;">Header-adding module</label> receives data from an upper layer protocol along with the destination IP address. It encapsulates the data in an IP datagram by adding the IP header.
+
+The <label style="color: red;">processing module</label> receives the datagram from an Interface or from the Header-adding module.
+1. Remove a datagram from one of the input queues.
+2. If the destination address matches loopback address or local address. Send the packet to Reassembly module.
+3. If the machine is a router, 
+	- decrease TTL.
+4. If TTL is less than or equal to 0, 
+	- discard the datagram.
+	- else send the datagram to the Forwarding module.
+
+The <label style="color: red;">Input queues</label> store the datagrams coming from the datalink layer or the upper layer protocols.
+The <label style="color: red;">Output queues</label> store the datagrams going to the datalink layer or the upper layer protocols.
+The processing module removes datagrams from the input queues. 
+The fragmentation and reassembly modules add the datagram into the output queues.
+
+The <label style="color: red;">Forwarding module</label> receives an IP packet from the processing module. The module finds the IP address of the next-hop along with the interface number to which the packet should be sent.
+The <label style="color: red;">MTU table</label> have two columns Interface number and MTU.
+
+
+
 
