@@ -148,6 +148,56 @@ The fragmentation and reassembly modules add the datagram into the output queues
 The <label style="color: red;">Forwarding module</label> receives an IP packet from the processing module. The module finds the IP address of the next-hop along with the interface number to which the packet should be sent.
 The <label style="color: red;">MTU table</label> have two columns Interface number and MTU.
 
+<p style="color:red">Lecture 24</p>
 
+The MTU table is used by the fragmentation module to find the maximum transfer unit of a particular interface.
+Fragmentation module consults the MTU table to find the MTU of the specific interface number.
+If the length of the datagram is larger than the MTU, the fragmentation module fragments the datagrams, adds a header to each fragment and sends them to the ARP package for address resolution and delivery.
+
+<label style="color: red;">Fragmentation module</label>
+1. Extract the size of the datagram.
+2. If size is greater than the MTU of the corresponding network.
+3. If <label style="color: red;">"D" bit</label> is set, a discard the datagram. 
+	Else, divided the datagram into fragments, add header to each fragment. Add required options to each fragment. Send the datagram.
+4. Else send the datagram.
+
+The <label style="color: red;">Reassembly Table</label>
+<img src="Figure8.28">
+The value of the state field can be either "Free" or "In use".
+The source IP address field(S.A.) defines the source IP address of the datagram. 
+The Datagram ID(D.I.) is same as the Identification field in the Header of datagram, corresponding with the S.A. field to uniquely defines the datagram and all the fragments belonging to that original datagram.
+The Time-out(T.O.) is a predetermined amount time in which all fragments must arrive. 
+The Fragments field is a pointer to a Linked list of fragments. 
+
+<label style="color: red;">Reassembly module</label>
+1. If offset value is 0 and the "more fragment" bit is 0, send the datagram to the appropriate queue.
+2. Else search the reassembly table for the corresponding entry.(Same D.I. and S.A.)
+3. If not found, create a new entry. 
+4. Insert the fragment at the appropriate place in the linked list.(based on the offset)
+5. If all fragments had arrived ("M"-bit and offset), reassembly the fragments, deliver the datagram to the upper layer protocol.
+6. Check the T.O., if the T.O. expired discard all fragments.
+
+<h1 style="color:grey">User Datagram Protocol</h1>
+UDP is connectionless unreliable transport protocol. It does not add anything to the service of IP except for providing <label style="color: red;">Process-to Process</label> communication instead of Host-to-Host communication.
+A process is a running application program. Identified by the "port" number.
+
+UDP is a simple protocol, does not provide flow control mechanism and there is no acknowledgment for received UDP datagram. 
+
+For communication we must define 
+- local host 
+- local process
+- remote host
+- remote process
+
+The client-server paradigm
+A process on the local host called a <label style="color: red;">Client</label> needs services from a process usually on the remote-host called <label style="color: red;">Server</label>
+
+The local host and the remote host are defined using IP addresses.
+To define the processes we need Identifiers called <label style="color: red;">Port numbers</label>
+
+The client program defines itself with a port number called <label style="color: red;">The ephemeral port number</label>.(临时端口)
+The server use universal port number an they are called <label style="color: red;">well-known port number</label>.(常用端口)
+
+The destination IP address defines the host among the different hosts in the world. After the host has been selected the port number defines one of the processes on this particular host.
 
 
