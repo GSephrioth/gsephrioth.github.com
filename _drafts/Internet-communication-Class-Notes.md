@@ -302,8 +302,41 @@ The segment consists of a 20~60 byte header followed by data from the applicatio
 	Acknowledgment and data can be piggybacked together.
 - Header Length(HLEN)
 	This 4-bit field indicated the number of 4-byte words in the TCP header. The length of the header can be between 20 and 60. So this can be between 5 and 15.
-- 
 
 
+<p style="color:red">Lecture 26</p>
 
+- Control
+	This field defines 6 different control bits or flags. One or none of these bits can be set at a time. 
+	URG自己补全
+	ACK
+	PSH
+	RST
+	SYN
+	FIN
+- Window size 有点复杂，自己仔细查下
+	This field is defines the size of the windows size in bytes. The other party must maintain. This values is determined by the receiver. The sender must obey the dictation of the receiver in this case.
+	RWND: Receivers windows size
+	CWND: Congestion window size
 
+- Checksum
+- Urgent pointer
+
+Connection establishment using <label style="color: red;">Three-way handshaking</label>
+<img src="Figure12.9">
+1. The client sends the first segment, a "SYN" segment in which only the "SYN" flag is set. This segment is for synchronization of sequence numbers. The client choose a random number as the first sequence number.
+The "SYN" segment is a control segment. And does not carry any data. However, it consumes one sequence number.
+
+2. 
+
+Data transfer
+<img src="Figure12.10">
+
+Connection termination using <label style="color: red;">Three-way handshaking</label>
+<img src="Figure12.11">
+
+Sliding window
+Window size = min(rwnd, cwnd)
+move the closing on the left according to receiving ACK
+move the opening on the right according to closing + window size 
+Shrinking window when rwnd or cwnd is reduced. This situation is not allowed in most implementation.
