@@ -9,7 +9,7 @@ series: Notes
 ---
 <h4 style="text-align:center">IP module components</h4>
 
-<img src="Figure8.26">
+<img src="/assets/img/TCP-IP/Figure8.26.png">
 
 The IP packet involves the following components:
 - Header-adding module
@@ -39,8 +39,6 @@ The fragmentation and reassembly modules add the datagram into the output queues
 The <label style="color: red;">Forwarding module</label> receives an IP packet from the processing module. The module finds the IP address of the next-hop along with the interface number to which the packet should be sent.
 The <label style="color: red;">MTU table</label> have two columns Interface number and MTU.
 
-<p style="color:red">Lecture 24</p>
-
 The MTU table is used by the fragmentation module to find the maximum transfer unit of a particular interface.
 Fragmentation module consults the MTU table to find the MTU of the specific interface number.
 If the length of the datagram is larger than the MTU, the fragmentation module fragments the datagrams, adds a header to each fragment and sends them to the ARP package for address resolution and delivery.
@@ -53,7 +51,8 @@ If the length of the datagram is larger than the MTU, the fragmentation module f
 4. Else send the datagram.
 
 The <label style="color: red;">Reassembly Table</label>
-<img src="Figure8.28">
+
+<img src="/assets/img/TCP-IP/Figure8.28.png">
 The value of the state field can be either "Free" or "In use".
 The source IP address field(S.A.) defines the source IP address of the datagram. 
 The Datagram ID(D.I.) is same as the Identification field in the Header of datagram, corresponding with the S.A. field to uniquely defines the datagram and all the fragments belonging to that original datagram.
