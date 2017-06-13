@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "IP module components"
+title:  "Ch9:IP module components"
 image: ''
-date:   2017-04-04 10:00:00
+date:   2017-04-27 18:00:00
 comments: true
 description: 'Description on IP module components'
 series: Notes
@@ -29,7 +29,7 @@ The <label style="color: red;">processing module</label> receives the datagram f
 	- decrease TTL.
 4. If TTL is less than or equal to 0, 
 	- discard the datagram.
-	- else send the datagram to the Forwarding module.
+	- else send the datagram to the <label style="color: red;">Forwarding module</label>.
 
 The <label style="color: red;">Input queues</label> store the datagrams coming from the datalink layer or the upper layer protocols.
 The <label style="color: red;">Output queues</label> store the datagrams going to the datalink layer or the upper layer protocols.
@@ -54,9 +54,13 @@ The <label style="color: red;">Reassembly Table</label>
 
 <img src="/assets/img/TCP-IP/Figure8.28.png">
 The value of the state field can be either "Free" or "In use".
+
 The source IP address field(S.A.) defines the source IP address of the datagram. 
+
 The Datagram ID(D.I.) is same as the Identification field in the Header of datagram, corresponding with the S.A. field to uniquely defines the datagram and all the fragments belonging to that original datagram.
+
 The Time-out(T.O.) is a predetermined amount time in which all fragments must arrive. 
+
 The Fragments field is a pointer to a Linked list of fragments. 
 
 <label style="color: red;">Reassembly module</label>

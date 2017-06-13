@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "IP Datagram"
+title:  "Ch8:IP Datagram"
 image: ''
-date:   2017-04-04 10:00:00
+date:   2017-04-26 10:00:00
 comments: true
 description: 'Description on IP datagram'
 series: Notes
@@ -24,15 +24,15 @@ This 4-bit field defines the version of the IP protocol
 - Header Length(HLEN): 
 This 4-bit field defines the total length of the datagram header in 4 byte times.
 
-```
-	length of header = header length * 4
-	must be between 5-15
-```
+{% highlight ruby %}
+length of header = header length * 4
+must be between 5-15
+{% endhighlight %}
 
 - Differentiated services(DS): 
 
-<img src="/assets/img/TCP-IP/Figure8.3.png">
-<img src="/assets/img/TCP-IP/Table8.1.png">
+<img src="/assets/img/TCP-IP/Figure8.3.png" style="width: 70%;height: 400px">
+<img src="/assets/img/TCP-IP/Table8.1.png" style="width: 70%;height: 400px">
 
 Service type:
 The first 3-bits are called precedence bits. 
@@ -67,7 +67,7 @@ Today this field is mostly used to control the max number of hops visited by the
 - Protocol: 
 This 8-bit field defines the high level protocol that uses the services of the IP layer.
 
-<img src="/assets/img/TCP-IP/Table8.4.png">
+<img src="/assets/img/TCP-IP/Table8.4.png" style="width: 40%;height: 400px">
 
 - Header checksum: 
 This used for error detection
@@ -95,7 +95,7 @@ The maximum length of the IP datagram is 65535 bytes. Transmission is very effic
 - Identification
 This 16-bits field identifies a datagram originating from the source to grantee uniqueness. The IP protocol uses a counter to label the datagrams the counter is initialized to a positive number, when the IP protocol sends a datagram it copies the current value of the counter to the identification field.
 
-<img src="/assets/img/TCP-IP/Figure8.7.png">
+<img src="/assets/img/TCP-IP/Figure8.7.png" style="width: 30%;height: 150px">
 - Flags
 This is a 3-bit field. So the first bit is reserved.
 
@@ -111,12 +111,13 @@ This 13-bit field shows the relative position of this Fragment with respect to t
 <label style="color: red;"> This process hosts or routers that fragment datagram introduce the size of each fragment so that the first byte number is divisible by 8.</label>
 
 The final destination host can reassemble the original datagram from the fragments received using the following strategy:
+{% highlight ruby %}
 1. The first fragment has an offset value of 0
 2. Divide the length of the first fragment by 8. The second fragment has an offset value equal to that result.
 3. Divide the total length of the first and second fragment by 8. The third fragment has an offset equal to that result.
 4. COntinue this process.
 5. The last fragment has the 'more fragment' bit ( AKA M bit) equal to 0.
-
+{% endhighlight %}
 
 First Byte = Offset Value * 8
 

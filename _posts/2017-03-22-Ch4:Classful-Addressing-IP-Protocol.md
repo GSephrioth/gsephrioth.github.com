@@ -1,14 +1,12 @@
 ---
 layout: post
-title:  "Classful Addressing"
+title:  "Ch4:Classful Addressing"
 image: ''
 date:   2017-03-22 13:15:00
 comments: true
 description: 'Definition of classful addressing with its advantages and dis advantages'
 series: TCP/IP
 ---
-
-<h1 style="color:grey">IP Address(CLassful Addressing)</h1>
 
 <h4 style="text-align:center">An IP address is a 32-bit address.</h4>
 

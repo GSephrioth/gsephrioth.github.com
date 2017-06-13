@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Classless Addressing"
+title:  "Ch5:Classless Addressing"
 image: ''
 date:   2017-03-22 13:15:00
 comments: true
@@ -8,7 +8,6 @@ description: 'Definition of classful addressing with its advantages and dis adva
 series: TCP/IP
 ---
 
-<h1 style="color:grey"> Classless Addressing</h1>
 In classless addressing <label style="color:red">variable-length blocks</label> are assigned that belong to no class. In this architecture, the entire address space (2^32 addresses) is divided into block of different sizes. 
 
 ## Rules:
@@ -49,7 +48,7 @@ In <label style="color:red">classless addressing</label> when an address is give
 As we know, in classless addressing, we need both the IP address and the Mask to determine a specific hop in the network.
 We use CIDR notation to represent the IP address and the mask of the address.
 
-<img src="/assets/img/having-fun/CIDRnotation.jpg">
+<img src="/assets/img/having-fun/CIDRnotation.jpg" style="width:200px;height:80px;" >
 
 If n=20, it means that 20 leftmost bits are identical in each addresses with 12 bits not the same.
 
@@ -68,16 +67,16 @@ We can dividing the subnet based on the number of subnets, which will influence 
 <h4 style="text-align:center">Remember First Address & Last Address is special</h4>
 
 E.g.: Diving 11 blocks in the given network address 12.24.74.0/24
-	00000000/26:0
-	01000000/26:64
-	10000000/27:128
-	10100000/27:160
-	11000000/28:192
-	11010000/28:208
-	11100000/28:224
-	11110000/30:240
-	11110100/30:244
-	11111000/30:248
-	11111100/30:252
+* 00000000/26:0
+* 01000000/26:64
+* 10000000/27:128
+* 10100000/27:160
+* 11000000/28:192
+* 11010000/28:208
+* 11100000/28:224
+* 11110000/30:240
+* 11110100/30:244
+* 11111000/30:248
+* 11111100/30:252
 
 
