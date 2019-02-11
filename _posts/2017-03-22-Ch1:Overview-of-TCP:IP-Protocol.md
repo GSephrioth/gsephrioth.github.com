@@ -1,14 +1,12 @@
 ---
 layout: post
-title:  "Overview of TCP/IP Protocol"
+title:  "Ch1:Overview of TCP/IP Protocol"
 image: ''
 date:   2017-03-22 11:15:00
 comments: true
 description: 'A menu of TCP/IP protocol'
 series: TCP/IP
 ---
-
-<h1 style="color:grey">Overview of TCP/IP Protocol</h1>
 
 ## network model
 

@@ -1,13 +1,12 @@
 ---
 layout: post
-title:  "Layers of TCP/IP Protocol"
+title:  "Ch2:Layers of TCP/IP Protocol"
 image: ''
 date:   2017-03-22 11:15:00
 comments: true
 description: 'Introduction of all layers in TCP/IP protocol'
 series: TCP/IP
 ---
-<h1 style="color:grey">Mostly used Layer architecture</h1>
 
 >The Internet model sometimes caused the TCP/IP protocol suit is composed of five levels:
 

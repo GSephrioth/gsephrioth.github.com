@@ -1,14 +1,12 @@
 ---
 layout: post
-title:  "Duties of Network Layer"
+title:  "Ch3:Duties of Network Layer"
 image: ''
 date:   2017-03-22 11:15:00
 comments: true
 description: 'Introduction of all layers in TCP/IP protocol'
 series: TCP/IP
 ---
-
-<h1 style="color:grey">Duties of Network Layer</h1>
 
 >The network layer is responsible for host-to host delivery for carrying packet through the internet through several physical networks. The main duties are shown as below:
 
